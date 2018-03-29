@@ -10,7 +10,7 @@
  *
  * Generic code for virtio server in host kernel.
  */
-
+#define DEBUG
 #include <linux/eventfd.h>
 #include <linux/vhost.h>
 #include <linux/uio.h>
@@ -149,6 +149,7 @@ struct vhost_flush_struct {
 
 static void vhost_flush_work(struct vhost_work *work)
 {
+	pr_debug("vhost_flush_work:%p\n", work);
 	struct vhost_flush_struct *s;
 
 	s = container_of(work, struct vhost_flush_struct, work);
@@ -169,6 +170,7 @@ static int vhost_poll_wakeup(wait_queue_entry_t *wait, unsigned mode, int sync,
 			     void *key)
 {
 	struct vhost_poll *poll = container_of(wait, struct vhost_poll, wait);
+	pr_debug("vhost_poll_wake_up poll:%p, wait:%p,mode:%u, sync:%d, key:%p\n", poll, wait, mode, sync, key);
 
 	if (!((unsigned long)key & poll->mask))
 		return 0;
@@ -194,6 +196,7 @@ void vhost_poll_init(struct vhost_poll *poll, vhost_work_fn_t fn,
 	poll->mask = mask;
 	poll->dev = dev;
 	poll->wqh = NULL;
+	pr_debug("vhost_poll_init:%p,fn:%p, mask:%lx\n",poll, fn, mask);
 
 	vhost_work_init(&poll->work, fn);
 }
@@ -203,6 +206,7 @@ EXPORT_SYMBOL_GPL(vhost_poll_init);
  * keep a reference to a file until after vhost_poll_stop is called. */
 int vhost_poll_start(struct vhost_poll *poll, struct file *file)
 {
+	pr_debug("vhost_poll_start:poll:%p, file:%p \n", poll, file);
 	unsigned long mask;
 	int ret = 0;
 
@@ -235,6 +239,7 @@ EXPORT_SYMBOL_GPL(vhost_poll_stop);
 
 void vhost_work_flush(struct vhost_dev *dev, struct vhost_work *work)
 {
+	pr_debug("vhost_work_flush:dev:%p, work:%p\n", dev, work);
 	struct vhost_flush_struct flush;
 
 	if (dev->worker) {
@@ -251,12 +256,14 @@ EXPORT_SYMBOL_GPL(vhost_work_flush);
  * locks that are also used by the callback. */
 void vhost_poll_flush(struct vhost_poll *poll)
 {
+	pr_debug("vhost_poll_flush:poll:%p\n", poll);
 	vhost_work_flush(poll->dev, &poll->work);
 }
 EXPORT_SYMBOL_GPL(vhost_poll_flush);
 
 void vhost_work_queue(struct vhost_dev *dev, struct vhost_work *work)
 {
+	pr_debug("vhost_work_queue:dev:%p, work:%p\n", dev, work);
 	if (!dev->worker)
 		return;
 
@@ -280,6 +287,7 @@ EXPORT_SYMBOL_GPL(vhost_has_work);
 
 void vhost_poll_queue(struct vhost_poll *poll)
 {
+	pr_debug("vhost_poll_queue:poll:%p\n", poll);
 	vhost_work_queue(poll->dev, &poll->work);
 }
 EXPORT_SYMBOL_GPL(vhost_poll_queue);
@@ -442,6 +450,7 @@ void vhost_dev_init(struct vhost_dev *dev,
 		vq->dev = dev;
 		mutex_init(&vq->mutex);
 		vhost_vq_reset(dev, vq);
+		pr_debug("vhost_dev_init: handle_kick:%p\n", vq->handle_kick);
 		if (vq->handle_kick)
 			vhost_poll_init(&vq->poll, vq->handle_kick,
 					POLLIN, dev);
@@ -473,6 +482,7 @@ static void vhost_attach_cgroups_work(struct vhost_work *work)
 
 static int vhost_attach_cgroups(struct vhost_dev *dev)
 {
+	pr_debug("vhost_attach_cgroups\n");
 	struct vhost_attach_cgroups_struct attach;
 
 	attach.owner = current;
@@ -1385,6 +1395,7 @@ long vhost_vring_ioctl(struct vhost_dev *d, int ioctl, void __user *argp)
 			break;
 		}
 		vq->num = s.num;
+		pr_debug("VHOST_SET_VRING_NUM: %x, vq->num:%d \n", ioctl, vq->num);
 		break;
 	case VHOST_SET_VRING_BASE:
 		/* Moving base with an active backend?
@@ -1404,12 +1415,14 @@ long vhost_vring_ioctl(struct vhost_dev *d, int ioctl, void __user *argp)
 		vq->last_avail_idx = s.num;
 		/* Forget the cached index value. */
 		vq->avail_idx = vq->last_avail_idx;
+		pr_debug("VHOST_SET_VRING_BASE: %x, avail_idx:%d last_avail_idx:%d\n", ioctl, vq->last_avail_idx, vq->avail_idx);
 		break;
 	case VHOST_GET_VRING_BASE:
 		s.index = idx;
 		s.num = vq->last_avail_idx;
 		if (copy_to_user(argp, &s, sizeof s))
 			r = -EFAULT;
+		pr_debug("VHOST_GET_VRING_BASE: %x, s.num:%d s.index:%d\n", ioctl, s.num, s.index);
 		break;
 	case VHOST_SET_VRING_ADDR:
 		if (copy_from_user(&a, argp, sizeof a)) {
@@ -1466,6 +1479,7 @@ long vhost_vring_ioctl(struct vhost_dev *d, int ioctl, void __user *argp)
 		vq->avail = (void __user *)(unsigned long)a.avail_user_addr;
 		vq->log_addr = a.log_guest_addr;
 		vq->used = (void __user *)(unsigned long)a.used_user_addr;
+		pr_debug("VHOST_SET_VRING_ADDRESS: %x, desc:%p, avail:%p, log_addr:%p, used:%p\n", ioctl, vq->desc, vq->avail, vq->log_addr, vq->used);
 		break;
 	case VHOST_SET_VRING_KICK:
 		if (copy_from_user(&f, argp, sizeof f)) {
@@ -1477,11 +1491,13 @@ long vhost_vring_ioctl(struct vhost_dev *d, int ioctl, void __user *argp)
 			r = PTR_ERR(eventfp);
 			break;
 		}
+		pr_debug("eventfp:%p, filep:%p, vq->kick:%p\n",eventfp, filep, vq->kick);
 		if (eventfp != vq->kick) {
 			pollstop = (filep = vq->kick) != NULL;
 			pollstart = (vq->kick = eventfp) != NULL;
 		} else
 			filep = eventfp;
+		pr_debug("VHOST_SET_VRING_KICK: %x, eventfp:%p, f.fd:%d, pollstart:%d, pollstop:%d, vq->kick:%p\n",ioctl, eventfp, f.fd, pollstart, pollstop, vq->kick);
 		break;
 	case VHOST_SET_VRING_CALL:
 		if (copy_from_user(&f, argp, sizeof f)) {
@@ -1501,6 +1517,7 @@ long vhost_vring_ioctl(struct vhost_dev *d, int ioctl, void __user *argp)
 				eventfd_ctx_fileget(eventfp) : NULL;
 		} else
 			filep = eventfp;
+		pr_debug("VHOST_SET_VRING_CALL: %x, eventfp:%u, f.fd:%d, vq->call:%p\n",ioctl, eventfp, f.fd, vq->call);
 		break;
 	case VHOST_SET_VRING_ERR:
 		if (copy_from_user(&f, argp, sizeof f)) {
@@ -1520,12 +1537,15 @@ long vhost_vring_ioctl(struct vhost_dev *d, int ioctl, void __user *argp)
 				eventfd_ctx_fileget(eventfp) : NULL;
 		} else
 			filep = eventfp;
+		pr_debug("VHOST_SET_VRING_CALL: %x, eventfp:%d, f.fd:%d, vq->error:%d\n",ioctl, eventfp, f.fd, vq->error);
 		break;
 	case VHOST_SET_VRING_ENDIAN:
 		r = vhost_set_vring_endian(vq, argp);
+		pr_debug("VHOST_SET_VRING_ENDIAN: %x\n",ioctl);
 		break;
 	case VHOST_GET_VRING_ENDIAN:
 		r = vhost_get_vring_endian(vq, idx, argp);
+		pr_debug("VHOST_GET_VRING_ENDIAN: %x\n",ioctl);
 		break;
 	case VHOST_SET_VRING_BUSYLOOP_TIMEOUT:
 		if (copy_from_user(&s, argp, sizeof(s))) {
@@ -1533,12 +1553,14 @@ long vhost_vring_ioctl(struct vhost_dev *d, int ioctl, void __user *argp)
 			break;
 		}
 		vq->busyloop_timeout = s.num;
+		pr_debug("VHOST_SET_VRING_BUSYLOOP_TIMEOUT: %x\n",ioctl);
 		break;
 	case VHOST_GET_VRING_BUSYLOOP_TIMEOUT:
 		s.index = idx;
 		s.num = vq->busyloop_timeout;
 		if (copy_to_user(argp, &s, sizeof(s)))
 			r = -EFAULT;
+		pr_debug("VHOST_GET_VRING_BUSYLOOP_TIMEOUT: %x\n",ioctl);
 		break;
 	default:
 		r = -ENOIOCTLCMD;
@@ -1552,8 +1574,9 @@ long vhost_vring_ioctl(struct vhost_dev *d, int ioctl, void __user *argp)
 	if (filep)
 		fput(filep);
 
-	if (pollstart && vq->handle_kick)
+	if (pollstart && vq->handle_kick) {
 		r = vhost_poll_start(&vq->poll, vq->kick);
+	}
 
 	mutex_unlock(&vq->mutex);
 
@@ -2276,6 +2299,7 @@ static bool vhost_notify(struct vhost_dev *dev, struct vhost_virtqueue *vq)
 void vhost_signal(struct vhost_dev *dev, struct vhost_virtqueue *vq)
 {
 	/* Signal the Guest tell them we used something up. */
+	pr_debug("vhost_signal:vq:%p\n", vq);
 	if (vq->call_ctx && vhost_notify(dev, vq))
 		eventfd_signal(vq->call_ctx, 1);
 }
@@ -2389,6 +2413,7 @@ EXPORT_SYMBOL_GPL(vhost_new_msg);
 void vhost_enqueue_msg(struct vhost_dev *dev, struct list_head *head,
 		       struct vhost_msg_node *node)
 {
+	pr_debug("vhost_enqueue_msg\n");
 	spin_lock(&dev->iotlb_lock);
 	list_add_tail(&node->node, head);
 	spin_unlock(&dev->iotlb_lock);
@@ -2400,6 +2425,7 @@ EXPORT_SYMBOL_GPL(vhost_enqueue_msg);
 struct vhost_msg_node *vhost_dequeue_msg(struct vhost_dev *dev,
 					 struct list_head *head)
 {
+	pr_debug("vhost_dequeue_msg\n");
 	struct vhost_msg_node *node = NULL;
 
 	spin_lock(&dev->iotlb_lock);

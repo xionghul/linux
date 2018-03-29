@@ -1,0 +1,1673 @@
+[ 2606.851541] br0: port 2(tap0) entered blocking state
+[ 2606.851542] br0: port 2(tap0) entered disabled state
+[ 2606.851586] device tap0 entered promiscuous mode
+[ 2606.851631] br0: port 2(tap0) entered blocking state
+[ 2606.851632] br0: port 2(tap0) entered forwarding state
+[ 2606.852059] handle_tx_kick:ffffffffc0895bc0
+[ 2606.852059] handle_rx_kick:ffffffffc0897520
+[ 2606.852061] vhost_dev_init: handle_kick:ffffffffc0897520
+[ 2606.852062] vhost_dev_init: handle_kick:ffffffffc0895bc0
+[ 2606.852062] handle_tx_net:ffffffffc0895b80
+[ 2606.852063] handle_rx_net:ffffffffc08974e0
+[ 2606.852066] vhost_net_ioctl:af01
+[ 2606.852420] vhost_attach_cgroups
+[ 2606.852421] vhost_work_queue:dev:ffff8b789cf30000, work:ffffabb0c1777d48
+[ 2606.852422] vhost_work_flush:dev:ffff8b789cf30000, work:ffffabb0c1777d48
+[ 2606.852423] vhost_work_queue:dev:ffff8b789cf30000, work:ffffabb0c1777cc8
+[ 2606.852457] vhost_flush_work:ffffabb0c1777cc8
+[ 2606.852473] vhost_net_flush_vq:index:1
+[ 2606.852474] vhost_poll_flush:poll:ffff8b789cf38cc8
+[ 2606.852475] vhost_work_flush:dev:ffff8b789cf30000, work:ffff8b789cf38d08
+[ 2606.852476] vhost_work_queue:dev:ffff8b789cf30000, work:ffffabb0c1777d00
+[ 2606.852491] vhost_flush_work:ffffabb0c1777d00
+[ 2606.852504] vhost_poll_flush:poll:ffff8b789cf34700
+[ 2606.852504] vhost_work_flush:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2606.852505] vhost_work_queue:dev:ffff8b789cf30000, work:ffffabb0c1777d00
+[ 2606.852507] vhost_flush_work:ffffabb0c1777d00
+[ 2606.852516] vhost_net_flush_vq:index:0
+[ 2606.852516] vhost_poll_flush:poll:ffff8b789cf38c38
+[ 2606.852517] vhost_work_flush:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2606.852517] vhost_work_queue:dev:ffff8b789cf30000, work:ffffabb0c1777d00
+[ 2606.852519] vhost_flush_work:ffffabb0c1777d00
+[ 2606.852528] vhost_poll_flush:poll:ffff8b789cf30138
+[ 2606.852529] vhost_work_flush:dev:ffff8b789cf30000, work:ffff8b789cf30178
+[ 2606.852529] vhost_work_queue:dev:ffff8b789cf30000, work:ffffabb0c1777d00
+[ 2606.852531] vhost_flush_work:ffffabb0c1777d00
+[ 2606.852534] vhost_net_ioctl:8008af00
+[ 2606.852537] vhost_net_ioctl:4008af21
+[ 2606.852539] VHOST_SET_VRING_CALL: 4008af21, eventfp:-1792544000, f.fd:16, vq->call:-1792544000
+[ 2606.852540] vhost_net_ioctl:4008af21
+[ 2606.852540] VHOST_SET_VRING_CALL: 4008af21, eventfp:-1792542976, f.fd:17, vq->call:-1792542976
+[ 2617.827928] vhost_net_ioctl:4008af21
+[ 2617.827932] VHOST_SET_VRING_CALL: 4008af21, eventfp:-1538361088, f.fd:29, vq->call:-1538361088
+[ 2617.827940] vhost_net_ioctl:4008af21
+[ 2617.827941] VHOST_SET_VRING_CALL: 4008af21, eventfp:-1538362880, f.fd:30, vq->call:-1538362880
+[ 2617.828000] vhost_net_ioctl:4008af00
+[ 2617.828002] vhost_net_ioctl:4008af03
+[ 2617.828004] vhost_net_flush_vq:index:1
+[ 2617.828005] vhost_poll_flush:poll:ffff8b789cf38cc8
+[ 2617.828006] vhost_work_flush:dev:ffff8b789cf30000, work:ffff8b789cf38d08
+[ 2617.828006] vhost_work_queue:dev:ffff8b789cf30000, work:ffffabb0c19ffd00
+[ 2617.828011] vhost_flush_work:ffffabb0c19ffd00
+[ 2617.828013] vhost_poll_flush:poll:ffff8b789cf34700
+[ 2617.828014] vhost_work_flush:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2617.828014] vhost_work_queue:dev:ffff8b789cf30000, work:ffffabb0c19ffd00
+[ 2617.828016] vhost_flush_work:ffffabb0c19ffd00
+[ 2617.828018] vhost_net_flush_vq:index:0
+[ 2617.828018] vhost_poll_flush:poll:ffff8b789cf38c38
+[ 2617.828019] vhost_work_flush:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2617.828020] vhost_work_queue:dev:ffff8b789cf30000, work:ffffabb0c19ffd00
+[ 2617.828021] vhost_flush_work:ffffabb0c19ffd00
+[ 2617.828023] vhost_poll_flush:poll:ffff8b789cf30138
+[ 2617.828024] vhost_work_flush:dev:ffff8b789cf30000, work:ffff8b789cf30178
+[ 2617.828024] vhost_work_queue:dev:ffff8b789cf30000, work:ffffabb0c19ffd00
+[ 2617.828026] vhost_flush_work:ffffabb0c19ffd00
+[ 2617.828028] vhost_net_ioctl:4008af10
+[ 2617.828029] VHOST_SET_VRING_NUM: 4008af10, vq->num:256 
+[ 2617.828030] vhost_net_ioctl:4008af12
+[ 2617.828030] VHOST_SET_VRING_BASE: 4008af12, avail_idx:0 last_avail_idx:0
+[ 2617.828041] vhost_net_ioctl:4028af11
+[ 2617.828042] VHOST_SET_VRING_ADDRESS: 4028af11, desc:00007f85b129a000, avail:00007f85b129b000, log_addr:000000003549b240, used:00007f85b129b240
+[ 2617.828043] vhost_net_ioctl:4008af20
+[ 2617.828043] VHOST_SET_VRING_KICK: 4008af20, eventfp:-1538362112, f.fd:31, pollstart:1, pollstop:0, vq->kick:-1538362112
+[ 2617.828044] vhost_poll_start 
+[ 2617.828045] vhost_poll_wake_up wait:ffff8b789cf30150,mode:0, sync:0, key:0000000000000005
+[ 2617.828045] vhost_poll_queue:poll:ffff8b789cf30138
+[ 2617.828046] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf30178
+[ 2617.828047] vhost_net_ioctl:4008af10
+[ 2617.828048] VHOST_SET_VRING_NUM: 4008af10, vq->num:256 
+[ 2617.828048] handle_rx_kick
+[ 2617.828049] vhost_net_ioctl:4008af12
+[ 2617.828049] VHOST_SET_VRING_BASE: 4008af12, avail_idx:0 last_avail_idx:0
+[ 2617.828050] vhost_net_ioctl:4028af11
+[ 2617.828051] VHOST_SET_VRING_ADDRESS: 4028af11, desc:00007f85b129c000, avail:00007f85b129d000, log_addr:000000003549d240, used:00007f85b129d240
+[ 2617.828051] vhost_net_ioctl:4008af20
+[ 2617.828052] VHOST_SET_VRING_KICK: 4008af20, eventfp:534793728, f.fd:32, pollstart:1, pollstop:0, vq->kick:534793728
+[ 2617.828052] vhost_poll_start 
+[ 2617.828053] vhost_poll_wake_up wait:ffff8b789cf34718,mode:0, sync:0, key:0000000000000005
+[ 2617.828054] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2617.828054] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2617.828056] handle_tx_kick
+[ 2617.828057] vhost_net_ioctl:4008af30
+[ 2617.828059] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2617.828061] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000145
+[ 2617.828061] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2617.828061] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2617.828062] vhost_net_ioctl:4008af30
+[ 2617.828063] vhost_net_enable_vq:vq:ffff8b789cf34670, sock->file:510818560, poll:ffff8b789cf38cc8
+[ 2617.828063] handle_rx_net
+[ 2617.828064] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:0, sync:0, key:0000000000000145
+[ 2617.828064] vhost_poll_queue:poll:ffff8b789cf38cc8
+[ 2617.828065] handle_rx:len:t:98,s:98
+[ 2617.828065] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38d08
+[ 2617.828066] handle_tx_net
+[ 2617.857531] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2618.151158] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2618.159875] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2619.145595] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2619.155038] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2619.612167] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2619.733371] vhost_poll_wake_up wait:ffff8b789cf30150,mode:3, sync:0, key:0000000000000001
+[ 2619.733374] vhost_poll_queue:poll:ffff8b789cf30138
+[ 2619.733375] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf30178
+[ 2619.733402] handle_rx_kick
+[ 2619.733406] handle_rx:len:t:72,s:72
+[ 2619.733421] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733424] handle_rx:len:t:72,s:72
+[ 2619.733426] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733426] handle_rx:len:t:72,s:72
+[ 2619.733432] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733433] handle_rx:len:t:186,s:186
+[ 2619.733436] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733438] handle_rx:len:t:186,s:186
+[ 2619.733439] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733440] handle_rx:len:t:102,s:102
+[ 2619.733443] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733444] handle_rx:len:t:72,s:72
+[ 2619.733446] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733447] handle_rx:len:t:102,s:102
+[ 2619.733449] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733450] handle_rx:len:t:82,s:82
+[ 2619.733451] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733452] handle_rx:len:t:122,s:122
+[ 2619.733455] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733457] handle_rx:len:t:230,s:230
+[ 2619.733459] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733460] handle_rx:len:t:119,s:119
+[ 2619.733462] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733463] handle_rx:len:t:72,s:72
+[ 2619.733465] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733466] handle_rx:len:t:72,s:72
+[ 2619.733468] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733469] handle_rx:len:t:104,s:104
+[ 2619.733471] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733472] handle_rx:len:t:122,s:122
+[ 2619.733477] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733478] handle_rx:len:t:104,s:104
+[ 2619.733481] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733481] handle_rx:len:t:230,s:230
+[ 2619.733483] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733484] handle_rx:len:t:104,s:104
+[ 2619.733485] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733486] handle_rx:len:t:230,s:230
+[ 2619.733488] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733488] handle_rx:len:t:218,s:218
+[ 2619.733490] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733492] handle_rx:len:t:142,s:142
+[ 2619.733493] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733494] handle_rx:len:t:119,s:119
+[ 2619.733495] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733497] handle_rx:len:t:72,s:72
+[ 2619.733498] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733499] handle_rx:len:t:72,s:72
+[ 2619.733500] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733501] handle_rx:len:t:218,s:218
+[ 2619.733502] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733503] handle_rx:len:t:72,s:72
+[ 2619.733505] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733505] handle_rx:len:t:189,s:189
+[ 2619.733508] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733508] handle_rx:len:t:374,s:374
+[ 2619.733510] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733511] handle_rx:len:t:371,s:371
+[ 2619.733512] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733513] handle_rx:len:t:371,s:371
+[ 2619.733515] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733516] handle_rx:len:t:72,s:72
+[ 2619.733517] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733518] handle_rx:len:t:72,s:72
+[ 2619.733519] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733519] handle_rx:len:t:371,s:371
+[ 2619.733521] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733522] handle_rx:len:t:371,s:371
+[ 2619.733523] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733524] handle_rx:len:t:72,s:72
+[ 2619.733525] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733526] handle_rx:len:t:119,s:119
+[ 2619.733527] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733528] handle_rx:len:t:119,s:119
+[ 2619.733530] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733531] handle_rx:len:t:72,s:72
+[ 2619.733532] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733533] handle_rx:len:t:72,s:72
+[ 2619.733535] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733536] handle_rx:len:t:218,s:218
+[ 2619.733538] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733538] handle_rx:len:t:72,s:72
+[ 2619.733539] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733539] handle_rx:len:t:82,s:82
+[ 2619.733540] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733541] handle_rx:len:t:72,s:72
+[ 2619.733542] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733542] handle_rx:len:t:72,s:72
+[ 2619.733544] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733544] handle_rx:len:t:104,s:104
+[ 2619.733545] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733545] handle_rx:len:t:99,s:99
+[ 2619.733547] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733547] handle_rx:len:t:72,s:72
+[ 2619.733548] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733549] handle_rx:len:t:72,s:72
+[ 2619.733550] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733550] handle_rx:len:t:72,s:72
+[ 2619.733551] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733553] handle_rx:len:t:72,s:72
+[ 2619.733554] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733555] handle_rx:len:t:72,s:72
+[ 2619.733557] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733557] handle_rx:len:t:72,s:72
+[ 2619.733558] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733559] handle_rx:len:t:119,s:119
+[ 2619.733561] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733562] handle_rx:len:t:72,s:72
+[ 2619.733563] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733563] handle_rx:len:t:72,s:72
+[ 2619.733565] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733566] handle_rx:len:t:72,s:72
+[ 2619.733567] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733568] handle_rx:len:t:72,s:72
+[ 2619.733569] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733570] handle_rx:len:t:72,s:72
+[ 2619.733571] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733572] handle_rx:len:t:72,s:72
+[ 2619.733573] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733574] handle_rx:len:t:183,s:183
+[ 2619.733575] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733575] handle_rx:len:t:72,s:72
+[ 2619.733576] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733577] handle_rx:len:t:72,s:72
+[ 2619.733579] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733580] handle_rx:len:t:72,s:72
+[ 2619.733584] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733584] handle_rx:len:t:72,s:72
+[ 2619.733586] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733587] handle_rx:len:t:72,s:72
+[ 2619.733589] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733589] handle_rx:len:t:72,s:72
+[ 2619.733591] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733591] handle_rx:len:t:72,s:72
+[ 2619.733592] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733592] handle_rx:len:t:82,s:82
+[ 2619.733594] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.733595] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2619.733598] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2619.822332] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2619.822339] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2619.822341] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2619.822378] handle_tx_kick
+[ 2619.822525] handle_tx zcopy:0, len:102
+[ 2619.822528] vhost_signal:vq:ffff8b789cf34670
+[ 2619.861473] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2619.861475] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2619.861476] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2619.861476] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2619.861494] handle_rx_net
+[ 2619.861496] handle_rx:len:t:72,s:72
+[ 2619.861499] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.861504] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2619.861507] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2619.926629] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2619.926631] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2619.926633] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2619.926668] handle_tx_kick
+[ 2619.926692] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2619.926694] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2619.926719] handle_tx zcopy:1, len:354
+[ 2619.926721] vhost_signal:vq:ffff8b789cf34670
+[ 2619.926722] handle_tx_kick
+[ 2619.931283] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2619.931285] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2619.931286] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2619.931287] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2619.931303] handle_rx_net
+[ 2619.931308] handle_rx:len:t:381,s:381
+[ 2619.931316] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.931319] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2619.931322] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2619.931613] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2619.931614] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2619.931615] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2619.931615] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2619.931632] handle_rx_net
+[ 2619.931634] handle_rx:len:t:381,s:381
+[ 2619.931637] vhost_signal:vq:ffff8b789cf300a8
+[ 2619.931639] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2619.931640] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2619.994808] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2619.994810] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2619.994811] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2619.994836] handle_tx_kick
+[ 2619.994863] handle_tx zcopy:0, len:66
+[ 2619.994864] vhost_signal:vq:ffff8b789cf34670
+[ 2620.095589] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.095592] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.095593] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.095619] handle_tx_kick
+[ 2620.095653] handle_tx zcopy:0, len:99
+[ 2620.095664] vhost_signal:vq:ffff8b789cf34670
+[ 2620.146175] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2620.146177] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2620.146177] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2620.146178] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2620.146217] handle_rx_net
+[ 2620.146219] handle_rx:len:t:72,s:72
+[ 2620.146226] vhost_signal:vq:ffff8b789cf300a8
+[ 2620.146232] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2620.146235] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2620.146365] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.146366] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.146366] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.146384] handle_tx_kick
+[ 2620.146404] handle_tx zcopy:0, len:156
+[ 2620.146405] vhost_signal:vq:ffff8b789cf34670
+[ 2620.154551] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2620.154553] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2620.154554] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2620.154555] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2620.154597] handle_rx_net
+[ 2620.154600] handle_rx:len:t:72,s:72
+[ 2620.154607] vhost_signal:vq:ffff8b789cf300a8
+[ 2620.154616] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2620.154618] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2620.194290] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.194292] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.194293] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.194301] handle_tx_kick
+[ 2620.194345] handle_tx zcopy:0, len:74
+[ 2620.194347] vhost_signal:vq:ffff8b789cf34670
+[ 2620.201348] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.201351] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.201351] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.201374] handle_tx_kick
+[ 2620.201409] handle_tx zcopy:0, len:54
+[ 2620.201411] vhost_signal:vq:ffff8b789cf34670
+[ 2620.202147] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2620.202148] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2620.202148] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2620.202149] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2620.202166] handle_rx_net
+[ 2620.202168] handle_rx:len:t:72,s:72
+[ 2620.202171] vhost_signal:vq:ffff8b789cf300a8
+[ 2620.202175] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2620.202176] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2620.202208] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.202210] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.202210] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.202227] handle_tx_kick
+[ 2620.202230] handle_tx zcopy:0, len:121
+[ 2620.202231] vhost_signal:vq:ffff8b789cf34670
+[ 2620.203045] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2620.203046] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2620.203046] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2620.203047] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2620.203063] handle_rx_net
+[ 2620.203064] handle_rx:len:t:153,s:153
+[ 2620.203065] vhost_signal:vq:ffff8b789cf300a8
+[ 2620.203066] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2620.203067] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2620.203303] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.203304] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.203304] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.203321] handle_tx_kick
+[ 2620.203323] handle_tx zcopy:0, len:88
+[ 2620.203324] vhost_signal:vq:ffff8b789cf34670
+[ 2620.203947] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2620.203948] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2620.203948] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2620.203949] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2620.203968] handle_rx_net
+[ 2620.203969] handle_rx:len:t:120,s:120
+[ 2620.203971] vhost_signal:vq:ffff8b789cf300a8
+[ 2620.203973] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2620.203974] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2620.349589] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.349591] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.349592] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.349611] handle_tx_kick
+[ 2620.349638] handle_tx zcopy:0, len:87
+[ 2620.349640] vhost_signal:vq:ffff8b789cf34670
+[ 2620.399918] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.399920] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.399921] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.399942] handle_tx_kick
+[ 2620.399969] handle_tx zcopy:0, len:156
+[ 2620.399970] vhost_signal:vq:ffff8b789cf34670
+[ 2620.439545] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.439548] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.439549] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.439580] handle_tx_kick
+[ 2620.439627] handle_tx zcopy:0, len:102
+[ 2620.439629] vhost_signal:vq:ffff8b789cf34670
+[ 2620.568370] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.568371] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.568372] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.568378] handle_tx_kick
+[ 2620.568428] handle_tx zcopy:0, len:87
+[ 2620.568430] vhost_signal:vq:ffff8b789cf34670
+[ 2620.568433] handle_tx zcopy:0, len:77
+[ 2620.568433] vhost_signal:vq:ffff8b789cf34670
+[ 2620.591765] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2620.591767] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2620.591767] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2620.591768] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2620.591784] handle_rx_net
+[ 2620.591786] handle_rx:len:t:185,s:185
+[ 2620.591792] vhost_signal:vq:ffff8b789cf300a8
+[ 2620.591794] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2620.591796] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2620.650631] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.650634] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.650635] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.650662] handle_tx_kick
+[ 2620.650697] handle_tx zcopy:0, len:156
+[ 2620.650700] vhost_signal:vq:ffff8b789cf34670
+[ 2620.686444] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.686449] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.686451] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.686493] handle_tx_kick
+[ 2620.686538] handle_tx zcopy:0, len:66
+[ 2620.686541] vhost_signal:vq:ffff8b789cf34670
+[ 2620.686559] handle_tx zcopy:0, len:98
+[ 2620.686560] vhost_signal:vq:ffff8b789cf34670
+[ 2620.851081] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.851083] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.851084] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.851103] handle_tx_kick
+[ 2620.851146] handle_tx zcopy:0, len:144
+[ 2620.851147] vhost_signal:vq:ffff8b789cf34670
+[ 2620.918390] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2620.918392] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2620.918392] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2620.918416] handle_tx_kick
+[ 2620.918464] handle_tx zcopy:0, len:87
+[ 2620.918466] vhost_signal:vq:ffff8b789cf34670
+[ 2620.918469] handle_tx zcopy:0, len:77
+[ 2620.918469] vhost_signal:vq:ffff8b789cf34670
+[ 2621.050131] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2621.050134] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2621.050135] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2621.050165] handle_tx_kick
+[ 2621.050213] handle_tx zcopy:0, len:99
+[ 2621.050214] vhost_signal:vq:ffff8b789cf34670
+[ 2621.145991] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2621.145992] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2621.145993] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2621.145994] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2621.146001] handle_rx_net
+[ 2621.146003] handle_rx:len:t:72,s:72
+[ 2621.146009] vhost_signal:vq:ffff8b789cf300a8
+[ 2621.146016] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2621.146018] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2621.154397] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2621.154399] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2621.154400] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2621.154401] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2621.154425] handle_rx_net
+[ 2621.154428] handle_rx:len:t:72,s:72
+[ 2621.154435] vhost_signal:vq:ffff8b789cf300a8
+[ 2621.154443] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2621.154445] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2621.207843] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2621.207845] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2621.207845] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2621.207865] handle_tx_kick
+[ 2621.207900] handle_tx zcopy:0, len:77
+[ 2621.207902] vhost_signal:vq:ffff8b789cf34670
+[ 2621.591609] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2621.591612] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2621.591613] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2621.591613] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2621.591633] handle_rx_net
+[ 2621.591636] handle_rx:len:t:185,s:185
+[ 2621.591642] vhost_signal:vq:ffff8b789cf300a8
+[ 2621.591645] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2621.591647] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2621.710333] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2621.710335] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2621.710336] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2621.710358] handle_tx_kick
+[ 2621.710402] handle_tx zcopy:0, len:102
+[ 2621.710404] vhost_signal:vq:ffff8b789cf34670
+[ 2621.726278] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2621.726280] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2621.726281] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2621.726298] handle_tx_kick
+[ 2621.726334] handle_tx zcopy:0, len:122
+[ 2621.726335] vhost_signal:vq:ffff8b789cf34670
+[ 2621.811713] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2621.811715] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2621.811716] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2621.811721] handle_tx_kick
+[ 2621.811760] handle_tx zcopy:0, len:119
+[ 2621.811761] vhost_signal:vq:ffff8b789cf34670
+[ 2621.811765] handle_tx zcopy:0, len:233
+[ 2621.811765] vhost_signal:vq:ffff8b789cf34670
+[ 2621.811783] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2621.811784] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2621.811785] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2621.811787] handle_tx_kick
+[ 2621.811806] handle_tx zcopy:0, len:213
+[ 2621.811806] vhost_signal:vq:ffff8b789cf34670
+[ 2621.811875] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2621.811875] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2621.811876] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2621.811878] handle_tx_kick
+[ 2621.811883] handle_tx zcopy:0, len:103
+[ 2621.811884] vhost_signal:vq:ffff8b789cf34670
+[ 2621.870554] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2621.870556] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2621.870557] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2621.870558] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2621.870575] handle_rx_net
+[ 2621.870578] handle_rx:len:t:72,s:72
+[ 2621.870583] vhost_signal:vq:ffff8b789cf300a8
+[ 2621.870586] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2621.870589] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2621.889870] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2621.889871] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2621.889872] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2621.889892] handle_tx_kick
+[ 2621.889923] handle_tx zcopy:0, len:107
+[ 2621.889924] vhost_signal:vq:ffff8b789cf34670
+[ 2621.902205] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2621.902208] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2621.902210] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2621.902236] handle_tx_kick
+[ 2621.902281] handle_tx zcopy:0, len:128
+[ 2621.902283] vhost_signal:vq:ffff8b789cf34670
+[ 2622.062579] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.062582] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.062583] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.062601] handle_tx_kick
+[ 2622.062644] handle_tx zcopy:0, len:233
+[ 2622.062646] vhost_signal:vq:ffff8b789cf34670
+[ 2622.062665] handle_tx zcopy:0, len:213
+[ 2622.062665] vhost_signal:vq:ffff8b789cf34670
+[ 2622.146138] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2622.146139] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2622.146140] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2622.146141] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2622.146162] handle_rx_net
+[ 2622.146165] handle_rx:len:t:72,s:72
+[ 2622.146170] vhost_signal:vq:ffff8b789cf300a8
+[ 2622.146172] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2622.146173] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2622.154870] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2622.154872] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2622.154873] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2622.154873] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2622.154893] handle_rx_net
+[ 2622.154895] handle_rx:len:t:72,s:72
+[ 2622.154899] vhost_signal:vq:ffff8b789cf300a8
+[ 2622.154901] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2622.154902] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2622.183306] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.183308] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.183309] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.183315] handle_tx_kick
+[ 2622.183360] handle_tx zcopy:0, len:70
+[ 2622.183361] vhost_signal:vq:ffff8b789cf34670
+[ 2622.183363] handle_tx zcopy:0, len:70
+[ 2622.183363] vhost_signal:vq:ffff8b789cf34670
+[ 2622.183375] handle_tx zcopy:0, len:90
+[ 2622.183376] vhost_signal:vq:ffff8b789cf34670
+[ 2622.183377] handle_tx zcopy:0, len:90
+[ 2622.183378] vhost_signal:vq:ffff8b789cf34670
+[ 2622.190312] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.190314] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.190315] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.190331] handle_tx_kick
+[ 2622.190384] handle_tx zcopy:0, len:122
+[ 2622.190385] vhost_signal:vq:ffff8b789cf34670
+[ 2622.193476] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.193477] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.193477] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.193490] handle_tx_kick
+[ 2622.193513] handle_tx zcopy:0, len:70
+[ 2622.193514] vhost_signal:vq:ffff8b789cf34670
+[ 2622.193516] handle_tx zcopy:0, len:70
+[ 2622.193516] vhost_signal:vq:ffff8b789cf34670
+[ 2622.193522] handle_tx zcopy:0, len:90
+[ 2622.193522] vhost_signal:vq:ffff8b789cf34670
+[ 2622.193524] handle_tx zcopy:0, len:90
+[ 2622.193524] vhost_signal:vq:ffff8b789cf34670
+[ 2622.240023] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.240027] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.240029] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.240061] handle_tx_kick
+[ 2622.240183] handle_tx zcopy:0, len:107
+[ 2622.240185] vhost_signal:vq:ffff8b789cf34670
+[ 2622.251910] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2622.251912] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2622.251912] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2622.251913] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2622.251929] handle_rx_net
+[ 2622.251932] handle_rx:len:t:72,s:72
+[ 2622.251936] vhost_signal:vq:ffff8b789cf300a8
+[ 2622.251938] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2622.251940] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2622.330975] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.330977] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.330979] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.331002] handle_tx_kick
+[ 2622.331041] handle_tx zcopy:0, len:74
+[ 2622.331043] vhost_signal:vq:ffff8b789cf34670
+[ 2622.339196] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.339197] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.339197] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.339219] handle_tx_kick
+[ 2622.339245] handle_tx zcopy:0, len:233
+[ 2622.339246] vhost_signal:vq:ffff8b789cf34670
+[ 2622.339262] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.339262] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.339263] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.339269] handle_tx_kick
+[ 2622.339290] handle_tx zcopy:0, len:213
+[ 2622.339291] vhost_signal:vq:ffff8b789cf34670
+[ 2622.339341] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.339342] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.339342] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.339362] handle_tx_kick
+[ 2622.339370] handle_tx zcopy:0, len:103
+[ 2622.339370] vhost_signal:vq:ffff8b789cf34670
+[ 2622.456282] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.456285] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.456286] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.456310] handle_tx_kick
+[ 2622.456390] handle_tx zcopy:0, len:107
+[ 2622.456403] vhost_signal:vq:ffff8b789cf34670
+[ 2622.517338] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2622.517341] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2622.517341] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2622.517342] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2622.517376] handle_rx_net
+[ 2622.517381] handle_rx:len:t:104,s:104
+[ 2622.517389] vhost_signal:vq:ffff8b789cf300a8
+[ 2622.517397] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2622.517400] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2622.539947] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.539950] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.539951] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.539973] handle_tx_kick
+[ 2622.540026] handle_tx zcopy:0, len:201
+[ 2622.540028] vhost_signal:vq:ffff8b789cf34670
+[ 2622.540050] handle_tx zcopy:0, len:221
+[ 2622.540050] vhost_signal:vq:ffff8b789cf34670
+[ 2622.702314] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.702316] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.702317] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.702347] handle_tx_kick
+[ 2622.702404] handle_tx zcopy:0, len:142
+[ 2622.702405] vhost_signal:vq:ffff8b789cf34670
+[ 2622.817409] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2622.817411] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2622.817412] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2622.817413] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2622.817442] handle_rx_net
+[ 2622.817445] handle_rx:len:t:255,s:255
+[ 2622.817454] vhost_signal:vq:ffff8b789cf300a8
+[ 2622.817459] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2622.817461] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2622.896065] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.896071] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.896073] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.896108] handle_tx_kick
+[ 2622.896207] handle_tx zcopy:0, len:119
+[ 2622.896209] vhost_signal:vq:ffff8b789cf34670
+[ 2622.997260] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2622.997262] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2622.997263] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2622.997286] handle_tx_kick
+[ 2622.997319] handle_tx zcopy:0, len:111
+[ 2622.997321] vhost_signal:vq:ffff8b789cf34670
+[ 2622.997340] handle_tx zcopy:0, len:114
+[ 2622.997340] vhost_signal:vq:ffff8b789cf34670
+[ 2623.070782] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2623.070785] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2623.070786] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2623.070787] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2623.070819] handle_rx_net
+[ 2623.070822] handle_rx:len:t:119,s:119
+[ 2623.070830] vhost_signal:vq:ffff8b789cf300a8
+[ 2623.070837] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2623.070839] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2623.145696] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2623.145697] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2623.145698] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2623.145699] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2623.145717] handle_rx_net
+[ 2623.145719] handle_rx:len:t:72,s:72
+[ 2623.145724] vhost_signal:vq:ffff8b789cf300a8
+[ 2623.145727] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2623.145729] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2623.154078] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2623.154079] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2623.154079] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2623.154080] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2623.154095] handle_rx_net
+[ 2623.154096] handle_rx:len:t:72,s:72
+[ 2623.154098] vhost_signal:vq:ffff8b789cf300a8
+[ 2623.154099] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2623.154100] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2623.590963] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2623.590965] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2623.590966] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2623.590997] handle_tx_kick
+[ 2623.591043] handle_tx zcopy:0, len:201
+[ 2623.591044] vhost_signal:vq:ffff8b789cf34670
+[ 2623.591061] handle_tx zcopy:0, len:221
+[ 2623.591061] vhost_signal:vq:ffff8b789cf34670
+[ 2623.595132] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2623.595135] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2623.595137] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2623.595138] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2623.595184] handle_rx_net
+[ 2623.595188] handle_rx:len:t:185,s:185
+[ 2623.595196] vhost_signal:vq:ffff8b789cf300a8
+[ 2623.595204] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2623.595207] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2623.874298] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2623.874301] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2623.874302] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2623.874303] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2623.874343] handle_rx_net
+[ 2623.874349] handle_rx:len:t:72,s:72
+[ 2623.874358] vhost_signal:vq:ffff8b789cf300a8
+[ 2623.874369] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2623.874372] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2623.953040] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2623.953043] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2623.953045] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2623.953085] handle_tx_kick
+[ 2623.953149] handle_tx zcopy:0, len:144
+[ 2623.953152] vhost_signal:vq:ffff8b789cf34670
+[ 2623.998507] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2623.998512] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2623.998515] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2623.998563] handle_tx_kick
+[ 2623.998640] handle_tx zcopy:0, len:111
+[ 2623.998643] vhost_signal:vq:ffff8b789cf34670
+[ 2623.998692] handle_tx zcopy:0, len:91
+[ 2623.998694] vhost_signal:vq:ffff8b789cf34670
+[ 2624.145839] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2624.145845] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2624.145847] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2624.145849] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2624.145902] handle_rx_net
+[ 2624.145911] handle_rx:len:t:72,s:72
+[ 2624.145923] vhost_signal:vq:ffff8b789cf300a8
+[ 2624.145938] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2624.145942] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2624.153977] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2624.153982] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2624.153984] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2624.153986] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2624.154041] handle_rx_net
+[ 2624.154052] handle_rx:len:t:72,s:72
+[ 2624.154065] vhost_signal:vq:ffff8b789cf300a8
+[ 2624.154080] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2624.154084] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2624.357640] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2624.357643] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2624.357643] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2624.357644] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2624.357684] handle_rx_net
+[ 2624.357686] handle_rx:len:t:72,s:72
+[ 2624.357694] vhost_signal:vq:ffff8b789cf300a8
+[ 2624.357701] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2624.357703] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2624.880801] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2624.880803] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2624.880805] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2624.880823] handle_tx_kick
+[ 2624.880852] handle_tx zcopy:0, len:69
+[ 2624.880853] vhost_signal:vq:ffff8b789cf34670
+[ 2624.897477] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2624.897479] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2624.897481] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2624.897507] handle_tx_kick
+[ 2624.897550] handle_tx zcopy:0, len:119
+[ 2624.897552] vhost_signal:vq:ffff8b789cf34670
+[ 2625.145912] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2625.145916] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2625.145917] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2625.145918] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2625.145956] handle_rx_net
+[ 2625.145963] handle_rx:len:t:72,s:72
+[ 2625.145972] vhost_signal:vq:ffff8b789cf300a8
+[ 2625.145985] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2625.145988] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2625.155009] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2625.155014] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2625.155016] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2625.155017] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2625.155065] handle_rx_net
+[ 2625.155070] handle_rx:len:t:72,s:72
+[ 2625.155082] vhost_signal:vq:ffff8b789cf300a8
+[ 2625.155097] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2625.155101] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2625.456365] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2625.456369] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2625.456371] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2625.456410] handle_tx_kick
+[ 2625.456467] handle_tx zcopy:0, len:97
+[ 2625.456469] vhost_signal:vq:ffff8b789cf34670
+[ 2625.456505] handle_tx zcopy:0, len:77
+[ 2625.456506] vhost_signal:vq:ffff8b789cf34670
+[ 2625.642775] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2625.642778] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2625.642780] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2625.642814] handle_tx_kick
+[ 2625.642869] handle_tx zcopy:0, len:201
+[ 2625.642871] vhost_signal:vq:ffff8b789cf34670
+[ 2625.642883] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2625.642885] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2625.642886] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2625.642922] handle_tx_kick
+[ 2625.642946] handle_tx zcopy:0, len:221
+[ 2625.642947] vhost_signal:vq:ffff8b789cf34670
+[ 2625.706430] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2625.706434] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2625.706436] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2625.706478] handle_tx_kick
+[ 2625.706542] handle_tx zcopy:0, len:97
+[ 2625.706544] vhost_signal:vq:ffff8b789cf34670
+[ 2625.706584] handle_tx zcopy:0, len:77
+[ 2625.706585] vhost_signal:vq:ffff8b789cf34670
+[ 2625.877518] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2625.877521] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2625.877521] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2625.877522] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2625.877556] handle_rx_net
+[ 2625.877559] handle_rx:len:t:72,s:72
+[ 2625.877567] vhost_signal:vq:ffff8b789cf300a8
+[ 2625.877576] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2625.877578] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2625.886989] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2625.886990] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2625.886992] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2625.887014] handle_tx_kick
+[ 2625.887037] handle_tx zcopy:0, len:91
+[ 2625.887039] vhost_signal:vq:ffff8b789cf34670
+[ 2625.956388] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2625.956393] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2625.956395] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2625.956438] handle_tx_kick
+[ 2625.956502] handle_tx zcopy:0, len:97
+[ 2625.956505] vhost_signal:vq:ffff8b789cf34670
+[ 2625.956544] handle_tx zcopy:0, len:77
+[ 2625.956545] vhost_signal:vq:ffff8b789cf34670
+[ 2626.146001] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2626.146004] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2626.146005] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2626.146005] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2626.146040] handle_rx_net
+[ 2626.146043] handle_rx:len:t:72,s:72
+[ 2626.146050] vhost_signal:vq:ffff8b789cf300a8
+[ 2626.146058] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2626.146062] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2626.159042] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2626.159046] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2626.159048] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2626.159049] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2626.159086] handle_rx_net
+[ 2626.159093] handle_rx:len:t:72,s:72
+[ 2626.159102] vhost_signal:vq:ffff8b789cf300a8
+[ 2626.159113] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2626.159116] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2626.182328] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2626.182331] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2626.182332] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2626.182333] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2626.182358] handle_rx_net
+[ 2626.182378] handle_rx:len:t:374,s:374
+[ 2626.182384] vhost_signal:vq:ffff8b789cf300a8
+[ 2626.182389] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2626.182391] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2626.183165] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2626.183166] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2626.183167] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2626.183167] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2626.183172] handle_rx_net
+[ 2626.183173] handle_rx:len:t:371,s:371
+[ 2626.183175] vhost_signal:vq:ffff8b789cf300a8
+[ 2626.183179] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2626.183180] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2626.183765] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2626.183766] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2626.183767] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2626.183767] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2626.183770] handle_rx_net
+[ 2626.183771] handle_rx:len:t:371,s:371
+[ 2626.183772] vhost_signal:vq:ffff8b789cf300a8
+[ 2626.183774] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2626.183774] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2626.207312] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2626.207314] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2626.207315] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2626.207316] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2626.207335] handle_rx_net
+[ 2626.207337] handle_rx:len:t:72,s:72
+[ 2626.207341] vhost_signal:vq:ffff8b789cf300a8
+[ 2626.207343] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2626.207345] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2626.309874] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2626.309879] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2626.309881] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2626.309883] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2626.309954] handle_rx_net
+[ 2626.309959] handle_rx:len:t:371,s:371
+[ 2626.309973] vhost_signal:vq:ffff8b789cf300a8
+[ 2626.309997] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2626.310001] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2626.314919] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2626.314925] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2626.314927] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2626.314928] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2626.314978] handle_rx_net
+[ 2626.314984] handle_rx:len:t:371,s:371
+[ 2626.314994] vhost_signal:vq:ffff8b789cf300a8
+[ 2626.315009] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2626.315014] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2626.330569] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2626.330572] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2626.330575] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2626.330612] handle_tx_kick
+[ 2626.330664] handle_tx zcopy:0, len:74
+[ 2626.330667] vhost_signal:vq:ffff8b789cf34670
+[ 2627.052124] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2627.052130] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2627.052133] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2627.052182] handle_tx_kick
+[ 2627.052290] handle_tx zcopy:0, len:99
+[ 2627.052294] vhost_signal:vq:ffff8b789cf34670
+[ 2627.148366] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2627.148373] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2627.148375] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2627.148378] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2627.148445] handle_rx_net
+[ 2627.148458] handle_rx:len:t:72,s:72
+[ 2627.148473] vhost_signal:vq:ffff8b789cf300a8
+[ 2627.148492] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2627.148497] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2627.156802] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2627.156809] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2627.156811] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2627.156814] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2627.156879] handle_rx_net
+[ 2627.156892] handle_rx:len:t:72,s:72
+[ 2627.156909] vhost_signal:vq:ffff8b789cf300a8
+[ 2627.156927] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2627.156933] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2627.595725] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2627.595730] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2627.595732] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2627.595734] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2627.595798] handle_rx_net
+[ 2627.595806] handle_rx:len:t:185,s:185
+[ 2627.595818] vhost_signal:vq:ffff8b789cf300a8
+[ 2627.595832] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2627.595836] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2627.883113] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2627.883116] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2627.883117] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2627.883119] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2627.883161] handle_rx_net
+[ 2627.883165] handle_rx:len:t:72,s:72
+[ 2627.883175] vhost_signal:vq:ffff8b789cf300a8
+[ 2627.883187] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2627.883189] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2628.148373] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2628.148380] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2628.148382] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2628.148384] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2628.148444] handle_rx_net
+[ 2628.148457] handle_rx:len:t:72,s:72
+[ 2628.148472] vhost_signal:vq:ffff8b789cf300a8
+[ 2628.148493] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2628.148502] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2628.156662] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2628.156669] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2628.156671] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2628.156673] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2628.156734] handle_rx_net
+[ 2628.156743] handle_rx:len:t:72,s:72
+[ 2628.156757] vhost_signal:vq:ffff8b789cf300a8
+[ 2628.156774] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2628.156778] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2628.899998] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2628.900003] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2628.900006] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2628.900060] handle_tx_kick
+[ 2628.900202] handle_tx zcopy:0, len:119
+[ 2628.900210] vhost_signal:vq:ffff8b789cf34670
+[ 2629.148348] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2629.148353] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2629.148355] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2629.148357] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2629.148407] handle_rx_net
+[ 2629.148418] handle_rx:len:t:72,s:72
+[ 2629.148433] vhost_signal:vq:ffff8b789cf300a8
+[ 2629.148451] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2629.148455] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2629.156552] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2629.156559] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2629.156561] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2629.156563] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2629.156619] handle_rx_net
+[ 2629.156629] handle_rx:len:t:72,s:72
+[ 2629.156643] vhost_signal:vq:ffff8b789cf300a8
+[ 2629.156662] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2629.156667] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2629.885572] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2629.885577] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2629.885578] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2629.885581] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2629.885626] handle_rx_net
+[ 2629.885630] handle_rx:len:t:72,s:72
+[ 2629.885639] vhost_signal:vq:ffff8b789cf300a8
+[ 2629.885652] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2629.885656] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2629.885774] vhost_net_ioctl:4008af21
+[ 2629.885781] VHOST_SET_VRING_CALL: 4008af21, eventfp:-1792544000, f.fd:16, vq->call:-1792544000
+[ 2629.885992] vhost_net_ioctl:4008af21
+[ 2629.885998] VHOST_SET_VRING_CALL: 4008af21, eventfp:-1538361088, f.fd:29, vq->call:-1538361088
+[ 2630.158441] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2630.158448] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2630.158449] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2630.158451] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2630.158530] handle_rx_net
+[ 2630.158539] handle_rx:len:t:72,s:72
+[ 2630.158551] vhost_signal:vq:ffff8b789cf300a8
+[ 2630.158558] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2630.158563] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2630.166808] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2630.166813] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2630.166815] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2630.166817] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2630.166861] handle_rx_net
+[ 2630.166868] handle_rx:len:t:72,s:72
+[ 2630.166879] vhost_signal:vq:ffff8b789cf300a8
+[ 2630.166891] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2630.166896] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2630.332068] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2630.332072] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2630.332074] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2630.332116] handle_tx_kick
+[ 2630.332196] handle_tx zcopy:0, len:74
+[ 2630.332199] vhost_signal:vq:ffff8b789cf34670
+[ 2631.158472] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2631.158476] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2631.158477] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2631.158479] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2631.158533] handle_rx_net
+[ 2631.158537] handle_rx:len:t:72,s:72
+[ 2631.158547] vhost_signal:vq:ffff8b789cf300a8
+[ 2631.158560] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2631.158563] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2631.166907] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2631.166911] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2631.166913] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2631.166914] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2631.166956] handle_rx_net
+[ 2631.166962] handle_rx:len:t:72,s:72
+[ 2631.166971] vhost_signal:vq:ffff8b789cf300a8
+[ 2631.166985] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2631.166988] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2631.886446] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2631.886450] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2631.886452] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2631.886492] handle_tx_kick
+[ 2631.886529] handle_tx zcopy:0, len:58
+[ 2631.886532] vhost_signal:vq:ffff8b789cf34670
+[ 2631.889747] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2631.889753] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2631.889755] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2631.889757] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2631.889807] handle_rx_net
+[ 2631.889817] handle_rx:len:t:72,s:72
+[ 2631.889828] vhost_signal:vq:ffff8b789cf300a8
+[ 2631.889845] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2631.889850] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2632.148570] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2632.148573] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2632.148575] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2632.148576] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2632.148613] handle_rx_net
+[ 2632.148620] handle_rx:len:t:72,s:72
+[ 2632.148628] vhost_signal:vq:ffff8b789cf300a8
+[ 2632.148640] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2632.148643] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2632.156805] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2632.156808] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2632.156810] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2632.156811] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2632.156849] handle_rx_net
+[ 2632.156855] handle_rx:len:t:72,s:72
+[ 2632.156864] vhost_signal:vq:ffff8b789cf300a8
+[ 2632.156875] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2632.156878] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2632.456389] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2632.456393] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2632.456395] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2632.456430] handle_tx_kick
+[ 2632.456487] handle_tx zcopy:0, len:97
+[ 2632.456490] vhost_signal:vq:ffff8b789cf34670
+[ 2632.456528] handle_tx zcopy:0, len:77
+[ 2632.456529] vhost_signal:vq:ffff8b789cf34670
+[ 2632.706311] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2632.706314] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2632.706316] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2632.706346] handle_tx_kick
+[ 2632.706391] handle_tx zcopy:0, len:97
+[ 2632.706393] vhost_signal:vq:ffff8b789cf34670
+[ 2632.706409] handle_tx zcopy:0, len:77
+[ 2632.706410] vhost_signal:vq:ffff8b789cf34670
+[ 2632.956386] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2632.956391] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2632.956393] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2632.956435] handle_tx_kick
+[ 2632.956496] handle_tx zcopy:0, len:97
+[ 2632.956499] vhost_signal:vq:ffff8b789cf34670
+[ 2632.956520] handle_tx zcopy:0, len:77
+[ 2632.956522] vhost_signal:vq:ffff8b789cf34670
+[ 2633.148816] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2633.148819] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2633.148820] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2633.148821] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2633.148855] handle_rx_net
+[ 2633.148860] handle_rx:len:t:72,s:72
+[ 2633.148868] vhost_signal:vq:ffff8b789cf300a8
+[ 2633.148876] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2633.148879] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2633.157154] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2633.157156] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2633.157157] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2633.157158] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2633.157191] handle_rx_net
+[ 2633.157196] handle_rx:len:t:72,s:72
+[ 2633.157204] vhost_signal:vq:ffff8b789cf300a8
+[ 2633.157213] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2633.157215] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2633.422400] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2633.422403] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2633.422405] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2633.422437] handle_tx_kick
+[ 2633.422462] handle_tx zcopy:0, len:58
+[ 2633.422463] vhost_signal:vq:ffff8b789cf34670
+[ 2633.893697] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2633.893702] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2633.893705] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2633.893707] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2633.893758] handle_rx_net
+[ 2633.893767] handle_rx:len:t:72,s:72
+[ 2633.893780] vhost_signal:vq:ffff8b789cf300a8
+[ 2633.893801] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2633.893807] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2634.146397] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2634.146403] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2634.146405] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2634.146407] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2634.146488] handle_rx_net
+[ 2634.146496] handle_rx:len:t:72,s:72
+[ 2634.146511] vhost_signal:vq:ffff8b789cf300a8
+[ 2634.146530] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2634.146535] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2634.154784] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2634.154791] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2634.154793] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2634.154795] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2634.154855] handle_rx_net
+[ 2634.154868] handle_rx:len:t:72,s:72
+[ 2634.154883] vhost_signal:vq:ffff8b789cf300a8
+[ 2634.154899] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2634.154904] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2634.460215] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2634.460219] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2634.460221] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2634.460222] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2634.460274] handle_rx_net
+[ 2634.460281] handle_rx:len:t:82,s:82
+[ 2634.460294] vhost_signal:vq:ffff8b789cf300a8
+[ 2634.460308] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2634.460312] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2635.058800] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2635.058805] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2635.058806] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2635.058847] handle_tx_kick
+[ 2635.058924] handle_tx zcopy:0, len:99
+[ 2635.058926] vhost_signal:vq:ffff8b789cf34670
+[ 2635.148829] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2635.148835] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2635.148837] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2635.148839] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2635.148911] handle_rx_net
+[ 2635.148922] handle_rx:len:t:72,s:72
+[ 2635.148935] vhost_signal:vq:ffff8b789cf300a8
+[ 2635.148954] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2635.148959] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2635.157018] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2635.157025] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2635.157027] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2635.157029] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2635.157089] handle_rx_net
+[ 2635.157101] handle_rx:len:t:72,s:72
+[ 2635.157115] vhost_signal:vq:ffff8b789cf300a8
+[ 2635.157132] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2635.157137] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2635.602278] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2635.602285] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2635.602288] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2635.602290] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2635.602360] handle_rx_net
+[ 2635.602370] handle_rx:len:t:185,s:185
+[ 2635.602384] vhost_signal:vq:ffff8b789cf300a8
+[ 2635.602400] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2635.602405] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2635.897700] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2635.897705] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2635.897707] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2635.897709] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2635.897760] handle_rx_net
+[ 2635.897768] handle_rx:len:t:72,s:72
+[ 2635.897778] vhost_signal:vq:ffff8b789cf300a8
+[ 2635.897793] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2635.897797] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2636.151322] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2636.151324] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2636.151325] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2636.151326] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2636.151360] handle_rx_net
+[ 2636.151364] handle_rx:len:t:72,s:72
+[ 2636.151371] vhost_signal:vq:ffff8b789cf300a8
+[ 2636.151380] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2636.151383] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2636.161219] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2636.161222] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2636.161222] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2636.161223] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2636.161256] handle_rx_net
+[ 2636.161259] handle_rx:len:t:72,s:72
+[ 2636.161266] vhost_signal:vq:ffff8b789cf300a8
+[ 2636.161275] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2636.161277] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2636.902428] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2636.902432] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2636.902434] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2636.902479] handle_tx_kick
+[ 2636.902547] handle_tx zcopy:0, len:119
+[ 2636.902550] vhost_signal:vq:ffff8b789cf34670
+[ 2637.148948] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2637.148954] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2637.148955] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2637.148957] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2637.149007] handle_rx_net
+[ 2637.149016] handle_rx:len:t:72,s:72
+[ 2637.149027] vhost_signal:vq:ffff8b789cf300a8
+[ 2637.149043] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2637.149047] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2637.157191] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2637.157196] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2637.157198] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2637.157200] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2637.157251] handle_rx_net
+[ 2637.157258] handle_rx:len:t:72,s:72
+[ 2637.157272] vhost_signal:vq:ffff8b789cf300a8
+[ 2637.157287] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2637.157290] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2637.252890] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2637.252895] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2637.252897] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2637.252899] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2637.252958] handle_rx_net
+[ 2637.252963] handle_rx:len:t:72,s:72
+[ 2637.252975] vhost_signal:vq:ffff8b789cf300a8
+[ 2637.252989] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2637.252993] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2637.289457] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2637.289462] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2637.289463] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2637.289465] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2637.289504] handle_rx_net
+[ 2637.289510] handle_rx:len:t:186,s:186
+[ 2637.289519] vhost_signal:vq:ffff8b789cf300a8
+[ 2637.289532] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2637.289536] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2637.289980] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2637.289982] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2637.289983] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2637.289984] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2637.290012] handle_rx_net
+[ 2637.290016] handle_rx:len:t:186,s:186
+[ 2637.290022] vhost_signal:vq:ffff8b789cf300a8
+[ 2637.290030] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2637.290033] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2637.456437] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2637.456442] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2637.456445] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2637.456498] handle_tx_kick
+[ 2637.456585] handle_tx zcopy:0, len:77
+[ 2637.456590] vhost_signal:vq:ffff8b789cf34670
+[ 2637.456626] handle_tx zcopy:0, len:97
+[ 2637.456628] vhost_signal:vq:ffff8b789cf34670
+[ 2637.706371] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2637.706376] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2637.706378] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2637.706426] handle_tx_kick
+[ 2637.706502] handle_tx zcopy:0, len:77
+[ 2637.706506] vhost_signal:vq:ffff8b789cf34670
+[ 2637.706531] handle_tx zcopy:0, len:97
+[ 2637.706533] vhost_signal:vq:ffff8b789cf34670
+[ 2637.901727] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2637.901732] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2637.901733] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2637.901735] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2637.901782] handle_rx_net
+[ 2637.901789] handle_rx:len:t:72,s:72
+[ 2637.901799] vhost_signal:vq:ffff8b789cf300a8
+[ 2637.901814] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2637.901817] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2637.956366] vhost_poll_wake_up wait:ffff8b789cf34718,mode:3, sync:0, key:0000000000000001
+[ 2637.956370] vhost_poll_queue:poll:ffff8b789cf34700
+[ 2637.956372] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf34740
+[ 2637.956417] handle_tx_kick
+[ 2637.956483] handle_tx zcopy:0, len:77
+[ 2637.956502] vhost_signal:vq:ffff8b789cf34670
+[ 2637.956525] handle_tx zcopy:0, len:97
+[ 2637.956526] vhost_signal:vq:ffff8b789cf34670
+[ 2638.149045] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2638.149050] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2638.149052] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2638.149054] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2638.149110] handle_rx_net
+[ 2638.149119] handle_rx:len:t:72,s:72
+[ 2638.149131] vhost_signal:vq:ffff8b789cf300a8
+[ 2638.149147] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2638.149152] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2638.157535] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2638.157541] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2638.157543] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2638.157545] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2638.157598] handle_rx_net
+[ 2638.157608] handle_rx:len:t:72,s:72
+[ 2638.157621] vhost_signal:vq:ffff8b789cf300a8
+[ 2638.157637] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2638.157641] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2639.071254] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2639.071255] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2639.071257] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2639.071257] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2639.071281] handle_rx_net
+[ 2639.071283] handle_rx:len:t:119,s:119
+[ 2639.071288] vhost_signal:vq:ffff8b789cf300a8
+[ 2639.071294] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2639.071296] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2639.148608] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2639.148612] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2639.148613] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2639.148614] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2639.148653] handle_rx_net
+[ 2639.148659] handle_rx:len:t:72,s:72
+[ 2639.148668] vhost_signal:vq:ffff8b789cf300a8
+[ 2639.148679] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2639.148682] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2639.156995] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2639.156999] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2639.157000] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2639.157002] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2639.157048] handle_rx_net
+[ 2639.157053] handle_rx:len:t:72,s:72
+[ 2639.157061] vhost_signal:vq:ffff8b789cf300a8
+[ 2639.157075] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2639.157078] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2639.323749] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2639.323755] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2639.323757] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2639.323759] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2639.323803] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2639.323807] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2639.323809] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2639.323811] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2639.323839] handle_rx_net
+[ 2639.323845] handle_rx:len:t:72,s:72
+[ 2639.323856] vhost_signal:vq:ffff8b789cf300a8
+[ 2639.323875] handle_rx:len:t:72,s:72
+[ 2639.323878] vhost_signal:vq:ffff8b789cf300a8
+[ 2639.323882] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2639.323887] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2639.375121] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2639.375128] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2639.375130] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2639.375132] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2639.375220] handle_rx_net
+[ 2639.375230] handle_rx:len:t:72,s:72
+[ 2639.375244] vhost_signal:vq:ffff8b789cf300a8
+[ 2639.375265] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2639.375272] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2639.905835] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2639.905840] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2639.905842] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2639.905843] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2639.905893] handle_rx_net
+[ 2639.905901] handle_rx:len:t:72,s:72
+[ 2639.905913] vhost_signal:vq:ffff8b789cf300a8
+[ 2639.905928] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2639.905932] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2640.045575] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2640.045580] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2640.045581] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2640.045583] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2640.045637] handle_rx_net
+[ 2640.045642] handle_rx:len:t:72,s:72
+[ 2640.045654] vhost_signal:vq:ffff8b789cf300a8
+[ 2640.045667] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2640.045671] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2640.148683] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2640.148689] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2640.148691] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2640.148694] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2640.148756] handle_rx_net
+[ 2640.148769] handle_rx:len:t:72,s:72
+[ 2640.148784] vhost_signal:vq:ffff8b789cf300a8
+[ 2640.148802] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2640.148806] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2640.156951] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2640.156959] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2640.156961] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2640.156963] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2640.157026] handle_rx_net
+[ 2640.157039] handle_rx:len:t:72,s:72
+[ 2640.157056] vhost_signal:vq:ffff8b789cf300a8
+[ 2640.157075] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2640.157080] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2641.148635] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2641.148639] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2641.148640] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2641.148641] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2641.148684] handle_rx_net
+[ 2641.148690] handle_rx:len:t:72,s:72
+[ 2641.148700] vhost_signal:vq:ffff8b789cf300a8
+[ 2641.148712] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2641.148715] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2641.156835] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2641.156839] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2641.156840] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2641.156841] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2641.156880] handle_rx_net
+[ 2641.156888] handle_rx:len:t:72,s:72
+[ 2641.156896] vhost_signal:vq:ffff8b789cf300a8
+[ 2641.156910] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2641.156913] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2641.909712] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2641.909717] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2641.909718] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2641.909721] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2641.909775] handle_rx_net
+[ 2641.909779] handle_rx:len:t:72,s:72
+[ 2641.909791] vhost_signal:vq:ffff8b789cf300a8
+[ 2641.909804] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2641.909808] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2642.148862] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2642.148868] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2642.148870] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2642.148872] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2642.148931] handle_rx_net
+[ 2642.148943] handle_rx:len:t:72,s:72
+[ 2642.148957] vhost_signal:vq:ffff8b789cf300a8
+[ 2642.148972] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2642.148976] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2642.157048] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2642.157054] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2642.157056] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2642.157059] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2642.157117] handle_rx_net
+[ 2642.157130] handle_rx:len:t:72,s:72
+[ 2642.157145] vhost_signal:vq:ffff8b789cf300a8
+[ 2642.157161] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2642.157171] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2642.236427] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2642.236431] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2642.236433] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2642.236434] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2642.236490] handle_rx_net
+[ 2642.236497] handle_rx:len:t:354,s:354
+[ 2642.236506] vhost_signal:vq:ffff8b789cf300a8
+[ 2642.236518] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2642.236522] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2642.710972] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2642.710975] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2642.710977] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2642.710978] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2642.711041] handle_rx_net
+[ 2642.711047] handle_rx:len:t:119,s:119
+[ 2642.711056] vhost_signal:vq:ffff8b789cf300a8
+[ 2642.711070] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2642.711073] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2642.746704] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2642.746708] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2642.746710] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2642.746711] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2642.746785] handle_rx_net
+[ 2642.746791] handle_rx:len:t:105,s:105
+[ 2642.746802] vhost_signal:vq:ffff8b789cf300a8
+[ 2642.746819] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2642.746826] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2642.798377] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2642.798382] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2642.798385] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2642.798387] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2642.798436] handle_rx_net
+[ 2642.798445] handle_rx:len:t:135,s:135
+[ 2642.798463] vhost_signal:vq:ffff8b789cf300a8
+[ 2642.798474] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2642.798479] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2642.829801] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2642.829807] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2642.829809] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2642.829811] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2642.829879] handle_rx_net
+[ 2642.829885] handle_rx:len:t:165,s:165
+[ 2642.829895] vhost_signal:vq:ffff8b789cf300a8
+[ 2642.829913] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2642.829918] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2643.059529] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2643.059535] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2643.059536] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2643.059538] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2643.059604] handle_rx_net
+[ 2643.059608] handle_rx:len:t:133,s:133
+[ 2643.059618] vhost_signal:vq:ffff8b789cf300a8
+[ 2643.059634] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2643.059642] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2643.060149] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2643.060150] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2643.060150] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2643.060150] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2643.060170] handle_rx_net
+[ 2643.060172] handle_rx:len:t:169,s:169
+[ 2643.060176] vhost_signal:vq:ffff8b789cf300a8
+[ 2643.060179] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2643.060180] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2643.127221] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2643.127226] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2643.127227] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2643.127228] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2643.127282] handle_rx_net
+[ 2643.127285] handle_rx:len:t:154,s:154
+[ 2643.127294] vhost_signal:vq:ffff8b789cf300a8
+[ 2643.127306] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2643.127309] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2643.129119] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2643.129123] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2643.129124] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2643.129126] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2643.129175] handle_rx_net
+[ 2643.129178] handle_rx:len:t:135,s:135
+[ 2643.129188] vhost_signal:vq:ffff8b789cf300a8
+[ 2643.129201] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2643.129205] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2643.148693] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2643.148698] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2643.148699] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2643.148701] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2643.148760] handle_rx_net
+[ 2643.148766] handle_rx:len:t:72,s:72
+[ 2643.148776] vhost_signal:vq:ffff8b789cf300a8
+[ 2643.148790] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2643.148794] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2643.156773] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2643.156778] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2643.156780] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2643.156782] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2643.156827] handle_rx_net
+[ 2643.156837] handle_rx:len:t:72,s:72
+[ 2643.156848] vhost_signal:vq:ffff8b789cf300a8
+[ 2643.156861] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2643.156865] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2643.666507] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2643.666514] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2643.666516] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2643.666518] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2643.666569] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2643.666572] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2643.666574] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2643.666575] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2643.666605] handle_rx_net
+[ 2643.666610] handle_rx:len:t:266,s:266
+[ 2643.666621] vhost_signal:vq:ffff8b789cf300a8
+[ 2643.666637] handle_rx:len:t:267,s:267
+[ 2643.666642] vhost_signal:vq:ffff8b789cf300a8
+[ 2643.666644] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2643.666649] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2643.886586] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2643.886590] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2643.886591] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2643.886593] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2643.886637] handle_rx_net
+[ 2643.886643] handle_rx:len:t:374,s:374
+[ 2643.886652] vhost_signal:vq:ffff8b789cf300a8
+[ 2643.886657] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2643.886661] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2643.889472] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2643.889476] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2643.889477] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2643.889479] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2643.889519] handle_rx_net
+[ 2643.889522] handle_rx:len:t:371,s:371
+[ 2643.889530] vhost_signal:vq:ffff8b789cf300a8
+[ 2643.889541] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2643.889544] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2643.892263] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2643.892266] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2643.892267] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2643.892269] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2643.892303] handle_rx_net
+[ 2643.892308] handle_rx:len:t:371,s:371
+[ 2643.892318] vhost_signal:vq:ffff8b789cf300a8
+[ 2643.892330] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2643.892333] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2643.913750] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2643.913755] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2643.913756] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2643.913758] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2643.913789] handle_rx_net
+[ 2643.913793] handle_rx:len:t:72,s:72
+[ 2643.913802] vhost_signal:vq:ffff8b789cf300a8
+[ 2643.913815] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2643.913818] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2644.008967] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2644.008974] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2644.008975] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2644.008978] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2644.009054] handle_rx_net
+[ 2644.009059] handle_rx:len:t:371,s:371
+[ 2644.009072] vhost_signal:vq:ffff8b789cf300a8
+[ 2644.009094] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2644.009101] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2644.013356] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2644.013361] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2644.013363] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2644.013366] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2644.013427] handle_rx_net
+[ 2644.013432] handle_rx:len:t:371,s:371
+[ 2644.013444] vhost_signal:vq:ffff8b789cf300a8
+[ 2644.013461] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2644.013466] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2644.148876] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2644.148879] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2644.148879] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2644.148880] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2644.148914] handle_rx_net
+[ 2644.148919] handle_rx:len:t:72,s:72
+[ 2644.148926] vhost_signal:vq:ffff8b789cf300a8
+[ 2644.148937] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2644.148939] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104
+[ 2644.157101] vhost_poll_wake_up wait:ffff8b789cf38ce0,mode:1, sync:1, key:00000000000000c3
+[ 2644.157104] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:1, sync:1, key:00000000000000c3
+[ 2644.157105] vhost_poll_queue:poll:ffff8b789cf38c38
+[ 2644.157106] vhost_work_queue:dev:ffff8b789cf30000, work:ffff8b789cf38c78
+[ 2644.157138] handle_rx_net
+[ 2644.157142] handle_rx:len:t:72,s:72
+[ 2644.157150] vhost_signal:vq:ffff8b789cf300a8
+[ 2644.157159] vhost_net_enable_vq:vq:ffff8b789cf300a8, sock->file:510818560, poll:ffff8b789cf38c38
+[ 2644.157161] vhost_poll_wake_up wait:ffff8b789cf38c50,mode:0, sync:0, key:0000000000000104

@@ -6,6 +6,7 @@
  * virtio-net server in host kernel.
  */
 
+#define DEBUG
 #include <linux/compat.h>
 #include <linux/eventfd.h>
 #include <linux/vhost.h>
@@ -404,6 +405,7 @@ static int vhost_net_enable_vq(struct vhost_net *n,
 	sock = vq->private_data;
 	if (!sock)
 		return 0;
+	pr_debug("vhost_net_enable_vq:vq:%p, sock->file:%d, poll:%p\n", vq, sock->file, poll);
 
 	return vhost_poll_start(poll, sock->file);
 }
@@ -567,6 +569,7 @@ static void handle_tx(struct vhost_net *net)
 		if (err != len)
 			pr_debug("Truncated TX packet: "
 				 " len %d != %zd\n", err, len);
+		pr_debug("handle_tx zcopy:%d, len:%d\n", zcopy_used, len);
 		if (!zcopy_used)
 			vhost_add_used_and_signal(&net->dev, vq, head, 0);
 		else
@@ -776,6 +779,7 @@ static void handle_rx(struct vhost_net *net)
 	while ((sock_len = vhost_net_rx_peek_head_len(net, sock->sk))) {
 		sock_len += sock_hlen;
 		vhost_len = sock_len + vhost_hlen;
+		pr_debug("handle_rx:len:t:%d,s:%d\n", vhost_len, sock_len);
 		headcount = get_rx_bufs(vq, vq->heads, vhost_len,
 					&in, vq_log, &log,
 					likely(mergeable) ? UIO_MAXIOV : 1);
@@ -865,6 +869,7 @@ out:
 
 static void handle_tx_kick(struct vhost_work *work)
 {
+	pr_debug("handle_tx_kick\n");
 	struct vhost_virtqueue *vq = container_of(work, struct vhost_virtqueue,
 						  poll.work);
 	struct vhost_net *net = container_of(vq->dev, struct vhost_net, dev);
@@ -874,6 +879,7 @@ static void handle_tx_kick(struct vhost_work *work)
 
 static void handle_rx_kick(struct vhost_work *work)
 {
+	pr_debug("handle_rx_kick\n");
 	struct vhost_virtqueue *vq = container_of(work, struct vhost_virtqueue,
 						  poll.work);
 	struct vhost_net *net = container_of(vq->dev, struct vhost_net, dev);
@@ -883,6 +889,7 @@ static void handle_rx_kick(struct vhost_work *work)
 
 static void handle_tx_net(struct vhost_work *work)
 {
+	pr_debug("handle_tx_net\n");
 	struct vhost_net *net = container_of(work, struct vhost_net,
 					     poll[VHOST_NET_VQ_TX].work);
 	handle_tx(net);
@@ -890,6 +897,7 @@ static void handle_tx_net(struct vhost_work *work)
 
 static void handle_rx_net(struct vhost_work *work)
 {
+	pr_debug("handle_rx_net\n");
 	struct vhost_net *net = container_of(work, struct vhost_net,
 					     poll[VHOST_NET_VQ_RX].work);
 	handle_rx(net);
@@ -926,6 +934,8 @@ static int vhost_net_open(struct inode *inode, struct file *f)
 	vqs[VHOST_NET_VQ_RX] = &n->vqs[VHOST_NET_VQ_RX].vq;
 	n->vqs[VHOST_NET_VQ_TX].vq.handle_kick = handle_tx_kick;
 	n->vqs[VHOST_NET_VQ_RX].vq.handle_kick = handle_rx_kick;
+	pr_debug("handle_tx_kick:%p\n", handle_tx_kick);
+	pr_debug("handle_rx_kick:%p\n", handle_rx_kick);
 	for (i = 0; i < VHOST_NET_VQ_MAX; i++) {
 		n->vqs[i].ubufs = NULL;
 		n->vqs[i].ubuf_info = NULL;
@@ -937,6 +947,8 @@ static int vhost_net_open(struct inode *inode, struct file *f)
 	}
 	vhost_dev_init(dev, vqs, VHOST_NET_VQ_MAX);
 
+	pr_debug("handle_tx_net:%p\n", handle_tx_net);
+	pr_debug("handle_rx_net:%p\n", handle_rx_net);
 	vhost_poll_init(n->poll + VHOST_NET_VQ_TX, handle_tx_net, POLLOUT, dev);
 	vhost_poll_init(n->poll + VHOST_NET_VQ_RX, handle_rx_net, POLLIN, dev);
 
@@ -970,12 +982,14 @@ static void vhost_net_stop(struct vhost_net *n, struct socket **tx_sock,
 
 static void vhost_net_flush_vq(struct vhost_net *n, int index)
 {
+	pr_debug("vhost_net_flush_vq:index:%d\n", index);
 	vhost_poll_flush(n->poll + index);
 	vhost_poll_flush(&n->vqs[index].vq.poll);
 }
 
 static void vhost_net_flush(struct vhost_net *n)
 {
+	pr_debug("vhost_net_flush\n");
 	vhost_net_flush_vq(n, VHOST_NET_VQ_TX);
 	vhost_net_flush_vq(n, VHOST_NET_VQ_RX);
 	if (n->vqs[VHOST_NET_VQ_TX].ubufs) {
@@ -1296,6 +1310,7 @@ static long vhost_net_ioctl(struct file *f, unsigned int ioctl,
 	struct vhost_vring_file backend;
 	u64 features;
 	int r;
+	pr_debug("vhost_net_ioctl:%x\n", ioctl);
 
 	switch (ioctl) {
 	case VHOST_NET_SET_BACKEND:
