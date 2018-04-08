@@ -170,7 +170,7 @@ static int vhost_poll_wakeup(wait_queue_entry_t *wait, unsigned mode, int sync,
 			     void *key)
 {
 	struct vhost_poll *poll = container_of(wait, struct vhost_poll, wait);
-	pr_debug("vhost_poll_wake_up poll:%p, wait:%p,mode:%u, sync:%d, key:%p\n", poll, wait, mode, sync, key);
+	pr_debug("vhost_poll_wake_up poll:%p, wait:%p,mode:%u, sync:%d, key:%x mask:%x\n", poll, wait, mode, sync, (unsigned long)key, poll->mask);
 
 	if (!((unsigned long)key & poll->mask))
 		return 0;
@@ -369,6 +369,7 @@ static int vhost_worker(void *data)
 		llist_for_each_entry_safe(work, work_next, node, node) {
 			clear_bit(VHOST_WORK_QUEUED, &work->flags);
 			__set_current_state(TASK_RUNNING);
+			pr_debug("vhost_worker:work:%p, fn:%p, dev:%p\n", work, work->fn, dev);
 			work->fn(work);
 			if (need_resched())
 				schedule();
@@ -482,11 +483,12 @@ static void vhost_attach_cgroups_work(struct vhost_work *work)
 
 static int vhost_attach_cgroups(struct vhost_dev *dev)
 {
-	pr_debug("vhost_attach_cgroups\n");
 	struct vhost_attach_cgroups_struct attach;
 
 	attach.owner = current;
 	vhost_work_init(&attach.work, vhost_attach_cgroups_work);
+
+	pr_debug("vhost_attach_cgroups:attach.work:%p\n", attach.work);
 	vhost_work_queue(dev, &attach.work);
 	vhost_work_flush(dev, &attach.work);
 	return attach.ret;
@@ -1077,6 +1079,8 @@ unsigned int vhost_chr_poll(struct file *file, struct vhost_dev *dev,
 	if (!list_empty(&dev->read_list))
 		mask |= POLLIN | POLLRDNORM;
 
+	pr_debug("vhost_chr_poll, mask:%d, wait:%p\n", mask, wait);
+
 	return mask;
 }
 EXPORT_SYMBOL(vhost_chr_poll);
@@ -1517,7 +1521,7 @@ long vhost_vring_ioctl(struct vhost_dev *d, int ioctl, void __user *argp)
 				eventfd_ctx_fileget(eventfp) : NULL;
 		} else
 			filep = eventfp;
-		pr_debug("VHOST_SET_VRING_CALL: %x, eventfp:%u, f.fd:%d, vq->call:%p\n",ioctl, eventfp, f.fd, vq->call);
+		pr_debug("VHOST_SET_VRING_CALL: %x, eventfp:%u, f.fd:%d, vq->call:%p, vq->call_ctx:%p\n",ioctl, eventfp, f.fd, vq->call, vq->call_ctx);
 		break;
 	case VHOST_SET_VRING_ERR:
 		if (copy_from_user(&f, argp, sizeof f)) {
@@ -2026,6 +2030,7 @@ int vhost_get_vq_desc(struct vhost_virtqueue *vq,
 	__virtio16 avail_idx;
 	__virtio16 ring_head;
 	int ret, access;
+	pr_debug("vhost_get_vq_desc:vqlai:%d, lai:%d,ai:%d\n", vq->last_avail_idx, last_avail_idx, vq->avail_idx);
 
 	/* Check it isn't doing very strange things with descriptor numbers. */
 	last_avail_idx = vq->last_avail_idx;
@@ -2047,6 +2052,7 @@ int vhost_get_vq_desc(struct vhost_virtqueue *vq,
 		/* If there's nothing new since last we looked, return
 		 * invalid.
 		 */
+		pr_debug("vhost_get_vq_desc:lai:%d, ai:%d, q:%d\n", last_avail_idx, vq->avail_idx, vq->num);
 		if (vq->avail_idx == last_avail_idx)
 			return vq->num;
 
@@ -2299,7 +2305,7 @@ static bool vhost_notify(struct vhost_dev *dev, struct vhost_virtqueue *vq)
 void vhost_signal(struct vhost_dev *dev, struct vhost_virtqueue *vq)
 {
 	/* Signal the Guest tell them we used something up. */
-	pr_debug("vhost_signal:vq:%p\n", vq);
+	pr_debug("vhost_signal:vq:%p, call_ctx:%p\n", vq, vq->call_ctx);
 	if (vq->call_ctx && vhost_notify(dev, vq))
 		eventfd_signal(vq->call_ctx, 1);
 }
@@ -2320,6 +2326,7 @@ void vhost_add_used_and_signal_n(struct vhost_dev *dev,
 				 struct vhost_virtqueue *vq,
 				 struct vring_used_elem *heads, unsigned count)
 {
+	pr_debug("vhost_add_used_and_signal_n:vq:%p, head:%p, count:%d\n", vq, heads, count);
 	vhost_add_used_n(vq, heads, count);
 	vhost_signal(dev, vq);
 }

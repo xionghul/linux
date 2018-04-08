@@ -334,6 +334,7 @@ static void vhost_zerocopy_signal_used(struct vhost_net *net,
 		} else
 			break;
 	}
+	printk("j:%d\n", j);
 	while (j) {
 		add = min(UIO_MAXIOV - nvq->done_idx, j);
 		vhost_add_used_and_signal_n(vq->dev, vq,
@@ -405,7 +406,7 @@ static int vhost_net_enable_vq(struct vhost_net *n,
 	sock = vq->private_data;
 	if (!sock)
 		return 0;
-	pr_debug("vhost_net_enable_vq:vq:%p, sock->file:%d, poll:%p\n", vq, sock->file, poll);
+	pr_debug("vhost_net_enable_vq:vq:%p, sock->file:%x, poll:%p\n", vq, sock->file, poll);
 
 	return vhost_poll_start(poll, sock->file);
 }
@@ -442,11 +443,23 @@ static bool vhost_exceeds_maxpend(struct vhost_net *net)
 		== nvq->done_idx;
 }
 
+void dump_buffer(uint8_t* p, size_t len)
+{
+	int i;
+	pr_debug("................................................................................");
+	for(i=0;i<len;i++) {
+		if(i%16 == 0) pr_debug("\n");
+		pr_debug("%.2x ",p[i]);
+	}
+	pr_debug("\n");
+}
+
 /* Expects to be always run from workqueue - which acts as
  * read-size critical section for our kind of RCU. */
 static void handle_tx(struct vhost_net *net)
 {
 	struct vhost_net_virtqueue *nvq = &net->vqs[VHOST_NET_VQ_TX];
+	struct vhost_net_virtqueue *rvq = &net->vqs[VHOST_NET_VQ_RX];
 	struct vhost_virtqueue *vq = &nvq->vq;
 	unsigned out, in;
 	int head;
@@ -466,6 +479,7 @@ static void handle_tx(struct vhost_net *net)
 
 	mutex_lock(&vq->mutex);
 	sock = vq->private_data;
+	pr_debug("handle_tx:sock:%p\n", sock);
 	if (!sock)
 		goto out;
 
@@ -476,6 +490,7 @@ static void handle_tx(struct vhost_net *net)
 
 	hdr_size = nvq->vhost_hlen;
 	zcopy = nvq->ubufs;
+	pr_debug("handle_tx:hdr_sz:%d, zcopy:%d\n", hdr_size, zcopy);
 
 	for (;;) {
 		/* Release DMAs done buffers first */
@@ -491,6 +506,7 @@ static void handle_tx(struct vhost_net *net)
 		head = vhost_net_tx_get_vq_desc(net, vq, vq->iov,
 						ARRAY_SIZE(vq->iov),
 						&out, &in);
+		pr_debug("handle_tx:head:%d, out:%d, in:%d, vq->num:%d\n", head, out, in, vq->num);
 		/* On error, stop handling until the next kick. */
 		if (unlikely(head < 0))
 			break;
@@ -519,6 +535,15 @@ static void handle_tx(struct vhost_net *net)
 			break;
 		}
 		len = msg_data_left(&msg);
+#if 1
+		pr_debug("iov_addr:%p, len:%d\n", vq->iov->iov_base, vq->iov->iov_len);
+		unsigned char tx_buf[1000];
+		copy_from_user(tx_buf, vq->iov->iov_base, vq->iov->iov_len);
+		dump_buffer(tx_buf, len);
+		pr_debug("handle_tx:buf:%s\n", tx_buf);
+		pr_debug("handle_tx:len:%d\n", len);
+#endif
+
 
 		zcopy_used = zcopy && len >= VHOST_GOODCOPY_LEN
 				   && (nvq->upend_idx + 1) % UIO_MAXIOV !=
@@ -554,9 +579,15 @@ static void handle_tx(struct vhost_net *net)
 		} else {
 			msg.msg_flags &= ~MSG_MORE;
 		}
+		pr_debug("handle_tx:total_len:%d\n", total_len);
 
 		/* TODO: Check specific error and bomb out unless ENOBUFS? */
+#if 1
+		pr_debug("rvq->poll:%p\n", &(&rvq->vq)->poll);
+		vhost_poll_queue(&(&rvq->vq)->poll);
+#endif
 		err = sock->ops->sendmsg(sock, &msg, len);
+		pr_debug("sendmsg err:%d\n", err);
 		if (unlikely(err < 0)) {
 			if (zcopy_used) {
 				vhost_net_ubuf_put(ubufs);
@@ -569,7 +600,7 @@ static void handle_tx(struct vhost_net *net)
 		if (err != len)
 			pr_debug("Truncated TX packet: "
 				 " len %d != %zd\n", err, len);
-		pr_debug("handle_tx zcopy:%d, len:%d\n", zcopy_used, len);
+		pr_debug("handle_tx zcopy:%d, len:%d, vq:%p, total_len:%u\n", zcopy_used, len, vq, total_len);
 		if (!zcopy_used)
 			vhost_add_used_and_signal(&net->dev, vq, head, 0);
 		else
@@ -760,6 +791,7 @@ static void handle_rx(struct vhost_net *net)
 
 	mutex_lock(&vq->mutex);
 	sock = vq->private_data;
+	pr_debug("handle_rx:sock:%p\n", sock);
 	if (!sock)
 		goto out;
 
@@ -819,6 +851,7 @@ static void handle_rx(struct vhost_net *net)
 		}
 		err = sock->ops->recvmsg(sock, &msg,
 					 sock_len, MSG_DONTWAIT | MSG_TRUNC);
+
 		/* Userspace might have consumed the packet meanwhile:
 		 * it's not supposed to do this usually, but might be hard
 		 * to prevent. Discard data we got (if any) and keep going. */
@@ -862,6 +895,38 @@ static void handle_rx(struct vhost_net *net)
 			goto out;
 		}
 	}
+
+#if 1
+    {
+		int head;
+		int k;
+		unsigned int out = 0, in = 0;
+		head = vhost_get_vq_desc(vq, vq->iov,
+					 ARRAY_SIZE(vq->iov), &out, &in,
+					 NULL, NULL);
+		pr_debug("vhost_get_vq_desc: head: %d, out: %d in: %d\n",
+				head, out, in);
+		const int reply_size = 1034;
+		unsigned char vhost_to_fe[1034] = {0};
+		unsigned char t = 0xb0;
+		for(k = 0; k < 1034; k++) {
+			if( k % 0xff == 0) {
+				vhost_to_fe[k] = t;
+				t++;
+			} else
+				vhost_to_fe[k] = k;
+		}
+
+		iov_iter_init(&msg.msg_iter, READ, vq->iov, 1, reply_size);
+		int ret = reply_size;
+		copy_to_user((&msg.msg_iter)->iov->iov_base, vhost_to_fe, reply_size);
+		pr_debug("RX: ret:%d, iov_base:%p\n", ret, (&msg.msg_iter)->iov->iov_base);
+		pr_debug("RX: ret:%d, iov_len:%d\n", ret, (&msg.msg_iter)->iov->iov_len);
+		dump_buffer(vhost_to_fe, reply_size);
+		vhost_add_used_and_signal(&net->dev, vq, head, 0);
+	}
+#endif
+
 	vhost_net_enable_vq(net, vq);
 out:
 	mutex_unlock(&vq->mutex);
@@ -869,7 +934,7 @@ out:
 
 static void handle_tx_kick(struct vhost_work *work)
 {
-	pr_debug("handle_tx_kick\n");
+	pr_debug("handle_tx_kick,work:%p\n", work);
 	struct vhost_virtqueue *vq = container_of(work, struct vhost_virtqueue,
 						  poll.work);
 	struct vhost_net *net = container_of(vq->dev, struct vhost_net, dev);
@@ -879,7 +944,7 @@ static void handle_tx_kick(struct vhost_work *work)
 
 static void handle_rx_kick(struct vhost_work *work)
 {
-	pr_debug("handle_rx_kick\n");
+	pr_debug("handle_rx_kick:work:%p\n", work);
 	struct vhost_virtqueue *vq = container_of(work, struct vhost_virtqueue,
 						  poll.work);
 	struct vhost_net *net = container_of(vq->dev, struct vhost_net, dev);
@@ -889,7 +954,7 @@ static void handle_rx_kick(struct vhost_work *work)
 
 static void handle_tx_net(struct vhost_work *work)
 {
-	pr_debug("handle_tx_net\n");
+	pr_debug("handle_tx_net,work:%p\n", work);
 	struct vhost_net *net = container_of(work, struct vhost_net,
 					     poll[VHOST_NET_VQ_TX].work);
 	handle_tx(net);
@@ -897,7 +962,7 @@ static void handle_tx_net(struct vhost_work *work)
 
 static void handle_rx_net(struct vhost_work *work)
 {
-	pr_debug("handle_rx_net\n");
+	pr_debug("handle_rx_net,work:%p\n",work);
 	struct vhost_net *net = container_of(work, struct vhost_net,
 					     poll[VHOST_NET_VQ_RX].work);
 	handle_rx(net);
@@ -1091,9 +1156,11 @@ static struct socket *get_tap_socket(int fd)
 	if (!file)
 		return ERR_PTR(-EBADF);
 	sock = tun_get_socket(file);
+	pr_debug("get_tun_socket:%p,fd:%d \n", sock, fd);
 	if (!IS_ERR(sock))
 		return sock;
 	sock = tap_get_socket(file);
+	pr_debug("get_tap_socket:%p,fd:%d \n", sock, fd);
 	if (IS_ERR(sock))
 		fput(file);
 	return sock;
@@ -1107,6 +1174,7 @@ static struct socket *get_socket(int fd)
 	if (fd == -1)
 		return NULL;
 	sock = get_raw_socket(fd);
+	pr_debug("get_raw_socket:%p,fd:%d \n", sock, fd);
 	if (!IS_ERR(sock))
 		return sock;
 	sock = get_tap_socket(fd);
