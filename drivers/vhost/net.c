@@ -334,7 +334,7 @@ static void vhost_zerocopy_signal_used(struct vhost_net *net,
 		} else
 			break;
 	}
-	printk("j:%d\n", j);
+	printk("j:%d, done:%d, upend:%d\n", j, nvq->done_idx, nvq->upend_idx);
 	while (j) {
 		add = min(UIO_MAXIOV - nvq->done_idx, j);
 		vhost_add_used_and_signal_n(vq->dev, vq,
@@ -393,6 +393,7 @@ static void vhost_net_disable_vq(struct vhost_net *n,
 	if (!vq->private_data)
 		return;
 	vhost_poll_stop(poll);
+	pr_debug("rx poll->wqh poll:%p, wqh:%p\n", poll, poll->wqh);
 }
 
 static int vhost_net_enable_vq(struct vhost_net *n,
@@ -445,6 +446,7 @@ static bool vhost_exceeds_maxpend(struct vhost_net *net)
 
 void dump_buffer(uint8_t* p, size_t len)
 {
+#if 0
 	int i;
 	pr_debug("................................................................................");
 	for(i=0;i<len;i++) {
@@ -452,6 +454,7 @@ void dump_buffer(uint8_t* p, size_t len)
 		pr_debug("%.2x ",p[i]);
 	}
 	pr_debug("\n");
+#endif
 }
 
 /* Expects to be always run from workqueue - which acts as
@@ -585,6 +588,8 @@ static void handle_tx(struct vhost_net *net)
 #if 1
 		pr_debug("rvq->poll:%p\n", &(&rvq->vq)->poll);
 		vhost_poll_queue(&(&rvq->vq)->poll);
+
+		vhost_add_used_and_signal(&net->dev, vq, head, 0);
 #endif
 		err = sock->ops->sendmsg(sock, &msg, len);
 		pr_debug("sendmsg err:%d\n", err);

@@ -163,6 +163,8 @@ static void vhost_poll_func(struct file *file, wait_queue_head_t *wqh,
 
 	poll = container_of(pt, struct vhost_poll, table);
 	poll->wqh = wqh;
+	pr_debug("vhost_poll_func: poll->wqh:%p\n", wqh);
+
 	add_wait_queue(wqh, &poll->wait);
 }
 
@@ -170,7 +172,7 @@ static int vhost_poll_wakeup(wait_queue_entry_t *wait, unsigned mode, int sync,
 			     void *key)
 {
 	struct vhost_poll *poll = container_of(wait, struct vhost_poll, wait);
-	pr_debug("vhost_poll_wake_up poll:%p, wait:%p,mode:%u, sync:%d, key:%x mask:%x\n", poll, wait, mode, sync, (unsigned long)key, poll->mask);
+	pr_debug("vhost_poll_wake_up poll:%p, wait:%p,mode:%u, sync:%d, key:%x mask:%x, poll->wqh:%p\n", poll, wait, mode, sync, (unsigned long)key, poll->mask, poll->wqh);
 
 	if (!((unsigned long)key & poll->mask))
 		return 0;
@@ -184,6 +186,7 @@ void vhost_work_init(struct vhost_work *work, vhost_work_fn_t fn)
 	clear_bit(VHOST_WORK_QUEUED, &work->flags);
 	work->fn = fn;
 	init_waitqueue_head(&work->done);
+	pr_debug("work->done wqh:%p\n", &work->done);
 }
 EXPORT_SYMBOL_GPL(vhost_work_init);
 
@@ -206,14 +209,16 @@ EXPORT_SYMBOL_GPL(vhost_poll_init);
  * keep a reference to a file until after vhost_poll_stop is called. */
 int vhost_poll_start(struct vhost_poll *poll, struct file *file)
 {
-	pr_debug("vhost_poll_start:poll:%p, file:%p \n", poll, file);
+	pr_debug("vhost_poll_start:poll:%p, file:%p poll->wqh:%p\n", poll, file, poll->wqh);
 	unsigned long mask;
 	int ret = 0;
 
 	if (poll->wqh)
 		return 0;
 
+	pr_debug("poll start wqh:%p\n", poll->wqh);
 	mask = file->f_op->poll(file, &poll->table);
+	pr_debug("poll wakeup wqh:%p, mask:%d\n", poll->wqh, mask);
 	if (mask)
 		vhost_poll_wakeup(&poll->wait, 0, 0, (void *)mask);
 	if (mask & POLLERR) {
@@ -438,6 +443,7 @@ void vhost_dev_init(struct vhost_dev *dev,
 	dev->worker = NULL;
 	init_llist_head(&dev->work_list);
 	init_waitqueue_head(&dev->wait);
+	pr_debug("dev->wait wqh:%p\n", &dev->wait);
 	INIT_LIST_HEAD(&dev->read_list);
 	INIT_LIST_HEAD(&dev->pending_list);
 	spin_lock_init(&dev->iotlb_lock);
