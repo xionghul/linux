@@ -17,7 +17,7 @@
  * This work is licensed under the terms of the GNU GPL, version 2.  See
  * the COPYING file in the top-level directory.
  */
-
+#define DEBUG
 #include <linux/kvm_host.h>
 #include <linux/kvm.h>
 #include <linux/mm.h>
@@ -54,7 +54,7 @@
 #define PRIu64 "u"
 #define PRIo64 "o"
 
-/* #define apic_debug(fmt,arg...) printk(KERN_WARNING fmt,##arg) */
+//#define apic_debug(fmt,arg...) printk(KERN_WARNING fmt,##arg)
 #define apic_debug(fmt, arg...)
 
 /* 14 is the version for Xeon and Pentium 8.4.8*/
@@ -600,8 +600,8 @@ static bool __apic_update_ppr(struct kvm_lapic *apic, u32 *new_ppr)
 	else
 		ppr = isrv & 0xf0;
 
-	apic_debug("vlapic %p, ppr 0x%x, isr 0x%x, isrv 0x%x",
-		   apic, ppr, isr, isrv);
+	//apic_debug("vlapic %p, ppr 0x%x, isr 0x%x, isrv 0x%x",
+//		   apic, ppr, isr, isrv);
 
 	*new_ppr = ppr;
 	if (old_ppr != ppr)
@@ -948,6 +948,10 @@ static int __apic_accept_irq(struct kvm_lapic *apic, int delivery_mode,
 
 	trace_kvm_apic_accept_irq(vcpu->vcpu_id, delivery_mode,
 				  trig_mode, vector);
+#if 0
+	pr_debug("__apic_accept_irq:vcpuid:%d, delivery_mode:%x, trig_mode:%d, vector:%d, apicv_active:%d\n",
+			vcpu->vcpu_id, delivery_mode, trig_mode, vector, vcpu->arch.apicv_active);
+#endif
 	switch (delivery_mode) {
 	case APIC_DM_LOWEST:
 		vcpu->arch.apic_arb_prio++;

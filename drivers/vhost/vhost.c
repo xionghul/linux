@@ -163,7 +163,7 @@ static void vhost_poll_func(struct file *file, wait_queue_head_t *wqh,
 
 	poll = container_of(pt, struct vhost_poll, table);
 	poll->wqh = wqh;
-	pr_debug("vhost_poll_func: poll->wqh:%p\n", wqh);
+	pr_debug("vhost_poll_func: file:%p,poll->wqh:%p\n", file, wqh);
 
 	add_wait_queue(wqh, &poll->wait);
 }
@@ -218,7 +218,7 @@ int vhost_poll_start(struct vhost_poll *poll, struct file *file)
 
 	pr_debug("poll start wqh:%p\n", poll->wqh);
 	mask = file->f_op->poll(file, &poll->table);
-	pr_debug("poll wakeup wqh:%p, mask:%d\n", poll->wqh, mask);
+	pr_debug("poll wakeup wqh:%p, mask:%d, file:%p\n", poll->wqh, mask, file);
 	if (mask)
 		vhost_poll_wakeup(&poll->wait, 0, 0, (void *)mask);
 	if (mask & POLLERR) {
@@ -1861,6 +1861,7 @@ static int translate_desc(struct vhost_virtqueue *vq, u64 addr, u32 len,
 	struct iovec *_iov;
 	u64 s = 0;
 	int ret = 0;
+	pr_debug("len:%x iotlb:%p, umem:%p, access:%x\n", len, dev->iotlb, umem, access);
 
 	while ((u64)len > s) {
 		u64 size;
@@ -1871,6 +1872,7 @@ static int translate_desc(struct vhost_virtqueue *vq, u64 addr, u32 len,
 
 		node = vhost_umem_interval_tree_iter_first(&umem->umem_tree,
 							addr, addr + len - 1);
+		pr_debug("node:%p, addr start:%lx, addr end:%lx\n", node, addr, addr + len - 1);
 		if (node == NULL || node->start > addr) {
 			if (umem != dev->iotlb) {
 				ret = -EFAULT;
@@ -1891,10 +1893,13 @@ static int translate_desc(struct vhost_virtqueue *vq, u64 addr, u32 len,
 		s += size;
 		addr += size;
 		++ret;
+		pr_debug("node->uaddr:%lx, addr:%lx, node->start:%lx, node->size:%lx, size:%lx\n", node->userspace_addr, addr, node->start, node->size, size);
+		pr_debug("_iov->iov_base:%p, _iov->len:%d\n", _iov->iov_base, _iov->iov_len);
 	}
 
 	if (ret == -EAGAIN)
 		vhost_iotlb_miss(vq, addr, access);
+	pr_debug("ret:%x \n", ret);
 	return ret;
 }
 
@@ -1970,6 +1975,9 @@ static int get_indirect(struct vhost_virtqueue *vq,
 			       i, count);
 			return -EINVAL;
 		}
+
+		pr_debug("get_indirect:iov_count:%d, from:%p\n", iov_count, from.iov->iov_base);
+
 		if (unlikely(!copy_from_iter_full(&desc, sizeof(desc), &from))) {
 			vq_err(vq, "Failed indirect descriptor: idx %d, %zx\n",
 			       i, (size_t)vhost64_to_cpu(vq, indirect->addr) + i * sizeof desc);
@@ -2113,6 +2121,9 @@ int vhost_get_vq_desc(struct vhost_virtqueue *vq,
 			       i, vq->desc + i);
 			return -EFAULT;
 		}
+
+		pr_debug("vhost_get_vq_desc:head:%d, addr:0x%llx, len:%x, flags:%x, next:%x\n", head, vhost64_to_cpu(vq, desc.addr),vhost32_to_cpu(vq, desc.len), desc.flags, desc.next);
+
 		if (desc.flags & cpu_to_vhost16(vq, VRING_DESC_F_INDIRECT)) {
 			ret = get_indirect(vq, iov, iov_size,
 					   out_num, in_num,

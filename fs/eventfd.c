@@ -4,7 +4,7 @@
  *  Copyright (C) 2007  Davide Libenzi <davidel@xmailserver.org>
  *
  */
-
+#define DEBUG
 #include <linux/file.h>
 #include <linux/poll.h>
 #include <linux/init.h>

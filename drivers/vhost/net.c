@@ -68,6 +68,7 @@ enum {
 	VHOST_NET_FEATURES = VHOST_FEATURES |
 			 (1ULL << VHOST_NET_F_VIRTIO_NET_HDR) |
 			 (1ULL << VIRTIO_NET_F_MRG_RXBUF) |
+			 (1ULL << VHOST_F_LOG_ALL) |
 			 (1ULL << VIRTIO_F_IOMMU_PLATFORM)
 };
 
@@ -407,7 +408,7 @@ static int vhost_net_enable_vq(struct vhost_net *n,
 	sock = vq->private_data;
 	if (!sock)
 		return 0;
-	pr_debug("vhost_net_enable_vq:vq:%p, sock->file:%x, poll:%p\n", vq, sock->file, poll);
+	pr_debug("vhost_net_enable_vq:vq:%p, sock->file:%p, poll:%p\n", vq, sock->file, poll);
 
 	return vhost_poll_start(poll, sock->file);
 }
@@ -446,7 +447,7 @@ static bool vhost_exceeds_maxpend(struct vhost_net *net)
 
 void dump_buffer(uint8_t* p, size_t len)
 {
-#if 0
+#if 1
 	int i;
 	pr_debug("................................................................................");
 	for(i=0;i<len;i++) {
@@ -540,7 +541,7 @@ static void handle_tx(struct vhost_net *net)
 		len = msg_data_left(&msg);
 #if 1
 		pr_debug("iov_addr:%p, len:%d\n", vq->iov->iov_base, vq->iov->iov_len);
-		unsigned char tx_buf[1000];
+		unsigned char tx_buf[500];
 		copy_from_user(tx_buf, vq->iov->iov_base, vq->iov->iov_len);
 		dump_buffer(tx_buf, len);
 		pr_debug("handle_tx:buf:%s\n", tx_buf);
@@ -585,7 +586,7 @@ static void handle_tx(struct vhost_net *net)
 		pr_debug("handle_tx:total_len:%d\n", total_len);
 
 		/* TODO: Check specific error and bomb out unless ENOBUFS? */
-#if 1
+#if 0
 		pr_debug("rvq->poll:%p\n", &(&rvq->vq)->poll);
 		vhost_poll_queue(&(&rvq->vq)->poll);
 
@@ -605,7 +606,7 @@ static void handle_tx(struct vhost_net *net)
 		if (err != len)
 			pr_debug("Truncated TX packet: "
 				 " len %d != %zd\n", err, len);
-		pr_debug("handle_tx zcopy:%d, len:%d, vq:%p, total_len:%u\n", zcopy_used, len, vq, total_len);
+		pr_debug("handle_tx zcopy_used:%d, len:%d, vq:%p, total_len:%u\n", zcopy_used, len, vq, total_len);
 		if (!zcopy_used)
 			vhost_add_used_and_signal(&net->dev, vq, head, 0);
 		else
@@ -816,10 +817,10 @@ static void handle_rx(struct vhost_net *net)
 	while ((sock_len = vhost_net_rx_peek_head_len(net, sock->sk))) {
 		sock_len += sock_hlen;
 		vhost_len = sock_len + vhost_hlen;
-		pr_debug("handle_rx:len:t:%d,s:%d\n", vhost_len, sock_len);
 		headcount = get_rx_bufs(vq, vq->heads, vhost_len,
 					&in, vq_log, &log,
 					likely(mergeable) ? UIO_MAXIOV : 1);
+		pr_debug("handle_rx:len:t:%d,s:%d, log:%d\n", vhost_len, sock_len, log);
 		/* On error, stop handling until the next kick. */
 		if (unlikely(headcount < 0))
 			goto out;
@@ -901,7 +902,7 @@ static void handle_rx(struct vhost_net *net)
 		}
 	}
 
-#if 1
+#if 0
     {
 		int head;
 		int k;
@@ -927,7 +928,7 @@ static void handle_rx(struct vhost_net *net)
 		copy_to_user((&msg.msg_iter)->iov->iov_base, vhost_to_fe, reply_size);
 		pr_debug("RX: ret:%d, iov_base:%p\n", ret, (&msg.msg_iter)->iov->iov_base);
 		pr_debug("RX: ret:%d, iov_len:%d\n", ret, (&msg.msg_iter)->iov->iov_len);
-		dump_buffer(vhost_to_fe, reply_size);
+		//dump_buffer(vhost_to_fe, reply_size);
 		vhost_add_used_and_signal(&net->dev, vq, head, 0);
 	}
 #endif
@@ -1142,9 +1143,11 @@ static struct skb_array *get_tap_skb_array(int fd)
 	if (!file)
 		return NULL;
 	array = tun_get_skb_array(file);
+	pr_debug("tun_get_skb_array:%p,fd:%d \n", array, fd);
 	if (!IS_ERR(array))
 		goto out;
 	array = tap_get_skb_array(file);
+	pr_debug("tap_get_skb_array:%p,fd:%d \n", array, fd);
 	if (!IS_ERR(array))
 		goto out;
 	array = NULL;
@@ -1219,6 +1222,7 @@ static long vhost_net_set_backend(struct vhost_net *n, unsigned index, int fd)
 		r = PTR_ERR(sock);
 		goto err_vq;
 	}
+	pr_debug("vhost_net_set_backend:fd:%d, sock:%p\n", fd, sock);
 
 	/* start polling new socket */
 	oldsock = vq->private_data;

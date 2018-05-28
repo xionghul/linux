@@ -78,6 +78,7 @@ static void write_vreg(struct intel_vgpu *vgpu, unsigned int offset,
 }
 
 static struct intel_gvt_mmio_info *find_mmio_info(struct intel_gvt *gvt,
+
 						  unsigned int offset)
 {
 	struct intel_gvt_mmio_info *e;

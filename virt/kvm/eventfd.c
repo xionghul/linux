@@ -20,7 +20,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
-
+#define DEBUG
 #include <linux/kvm_host.h>
 #include <linux/kvm.h>
 #include <linux/kvm_irqfd.h>
@@ -51,6 +51,7 @@ irqfd_inject(struct work_struct *work)
 		container_of(work, struct kvm_kernel_irqfd, inject);
 	struct kvm *kvm = irqfd->kvm;
 
+	pr_debug("KVM: irqfd_inject:work:%p, eventfd:%p, resampler:%p, gsi:%d\n", work, irqfd->eventfd, irqfd->resampler, irqfd->gsi); 
 	if (!irqfd->resampler) {
 		kvm_set_irq(kvm, KVM_USERSPACE_IRQ_SOURCE_ID, irqfd->gsi, 1,
 				false);
@@ -82,6 +83,8 @@ irqfd_resampler_ack(struct kvm_irq_ack_notifier *kian)
 		    resampler->notifier.gsi, 0, false);
 
 	idx = srcu_read_lock(&kvm->irq_srcu);
+
+	pr_debug("KVM: irqfd_resampler_ack:%p, gsi:%d\n", irqfd->resamplefd, resampler->notifier.gsi);
 
 	list_for_each_entry_rcu(irqfd, &resampler->list, resampler_link)
 		eventfd_signal(irqfd->resamplefd, 1);
@@ -201,10 +204,12 @@ irqfd_wakeup(wait_queue_entry_t *wait, unsigned mode, int sync, void *key)
 			irq = irqfd->irq_entry;
 		} while (read_seqcount_retry(&irqfd->irq_entry_sc, seq));
 		/* An event has been signaled, inject an interrupt */
+		pr_debug("KVM: H->G sch irqfd_wakeup:eventfd:%p, flags:%x, type:%x, \n", irqfd->eventfd, flags, irq.type);
 		if (kvm_arch_set_irq_inatomic(&irq, kvm,
 					      KVM_USERSPACE_IRQ_SOURCE_ID, 1,
-					      false) == -EWOULDBLOCK)
+					      false) == -EWOULDBLOCK) {
 			schedule_work(&irqfd->inject);
+		}
 		srcu_read_unlock(&kvm->irq_srcu, idx);
 	}
 
@@ -366,6 +371,7 @@ kvm_irqfd_assign(struct kvm *kvm, struct kvm_irqfd *args)
 		mutex_unlock(&kvm->irqfds.resampler_lock);
 	}
 
+	pr_debug("KVM: fd:%d, file:%p, eventfd:%p, gsi:%d, flags:%x\n", args->fd, f.file, eventfd, irqfd->gsi, args->flags);
 	/*
 	 * Install our own custom wake-up handling so we are notified via
 	 * a callback whenever someone signals the underlying eventfd
@@ -398,6 +404,8 @@ kvm_irqfd_assign(struct kvm *kvm, struct kvm_irqfd *args)
 	 * before we registered, and trigger it as if we didn't miss it.
 	 */
 	events = f.file->f_op->poll(f.file, &irqfd->pt);
+
+	pr_debug("KVM: H->G poll irqfd:%d, file:%p, eventfd:%p, gsi:%d, events:%d\n", args->fd, f.file, eventfd, irqfd->gsi, events);
 
 	if (events & POLLIN)
 		schedule_work(&irqfd->inject);
@@ -731,6 +739,8 @@ ioeventfd_write(struct kvm_vcpu *vcpu, struct kvm_io_device *this, gpa_t addr,
 	if (!ioeventfd_in_range(p, addr, len, val))
 		return -EOPNOTSUPP;
 
+	pr_debug("KVM: G->H ioeventfd_write:%p, addr:%x, len:%d\n", p->eventfd, addr, len);
+
 	eventfd_signal(p->eventfd, 1);
 	return 0;
 }
@@ -804,6 +814,7 @@ static int kvm_assign_ioeventfd_idx(struct kvm *kvm,
 	p->length  = args->len;
 	p->eventfd = eventfd;
 
+	pr_debug("KVM: event fd:%d, eventfd:%p, gsi:%d\n", args->fd, eventfd );
 	/* The datamatch feature is optional, otherwise this is a wildcard */
 	if (args->flags & KVM_IOEVENTFD_FLAG_DATAMATCH)
 		p->datamatch = args->datamatch;

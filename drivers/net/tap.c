@@ -1,3 +1,4 @@
+#define DEBUG
 #include <linux/etherdevice.h>
 #include <linux/if_tap.h>
 #include <linux/if_vlan.h>
@@ -1146,6 +1147,7 @@ static const struct file_operations tap_fops = {
 static int tap_sendmsg(struct socket *sock, struct msghdr *m,
 		       size_t total_len)
 {
+	pr_debug("tap_sendmsg:sock:%p,msg:%p,total_len:%p\n", sock, m, total_len);
 	struct tap_queue *q = container_of(sock, struct tap_queue, sock);
 	return tap_get_user(q, m, &m->msg_iter, m->msg_flags & MSG_DONTWAIT);
 }
@@ -1153,6 +1155,7 @@ static int tap_sendmsg(struct socket *sock, struct msghdr *m,
 static int tap_recvmsg(struct socket *sock, struct msghdr *m,
 		       size_t total_len, int flags)
 {
+	pr_debug("tap_recvmsg:sock:%p,msg:%p,total_len:%p\n", sock, m, total_len);
 	struct tap_queue *q = container_of(sock, struct tap_queue, sock);
 	int ret;
 	if (flags & ~(MSG_DONTWAIT|MSG_TRUNC))

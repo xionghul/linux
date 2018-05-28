@@ -840,6 +840,7 @@ unsigned int datagram_poll(struct file *file, struct socket *sock,
 	unsigned int mask;
 
 	sock_poll_wait(file, sk_sleep(sk), wait);
+	pr_debug("datagram_poll:file:%p,sock:%p\n", file, sock);
 	mask = 0;
 
 	/* exceptional events? */

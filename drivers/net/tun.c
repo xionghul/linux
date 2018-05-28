@@ -33,6 +33,7 @@
  *  Daniel Podlejski <underley@underley.eu.org>
  *    Modifications for 2.3.99-pre5 kernel.
  */
+#define DEBUG
 
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
@@ -79,10 +80,10 @@
 #include <linux/uaccess.h>
 
 /* Uncomment to enable debugging */
-/* #define TUN_DEBUG 1 */
+#define TUN_DEBUG 1
 
 #ifdef TUN_DEBUG
-static int debug;
+static int debug = 2;
 
 #define tun_debug(level, tun, fmt, args...)			\
 do {								\
@@ -1447,6 +1448,7 @@ static ssize_t tun_get_user(struct tun_struct *tun, struct tun_file *tfile,
 		if (iov_iter_npages(&i, INT_MAX) <= MAX_SKB_FRAGS)
 			zerocopy = true;
 	}
+	pr_debug("tun_get_user zerocopy:%d\n", zerocopy);
 
 	if (tun_can_build_skb(tun, tfile, len, noblock, zerocopy)) {
 		/* For the packet that is not easy to be processed
@@ -1832,6 +1834,7 @@ static void tun_sock_write_space(struct sock *sk)
 
 static int tun_sendmsg(struct socket *sock, struct msghdr *m, size_t total_len)
 {
+	pr_debug("tun_sendmsg:sock:%p,msg:%p,total_len:%p, sock->file:%p\n", sock, m, total_len, sock->file);
 	int ret;
 	struct tun_file *tfile = container_of(sock, struct tun_file, socket);
 	struct tun_struct *tun = __tun_get(tfile);
@@ -1849,6 +1852,7 @@ static int tun_sendmsg(struct socket *sock, struct msghdr *m, size_t total_len)
 static int tun_recvmsg(struct socket *sock, struct msghdr *m, size_t total_len,
 		       int flags)
 {
+	pr_debug("ko tun_recvmsg:sock:%p,msg:%p,total_len:%p,sock->file%p\n", sock, m, total_len, sock->file);
 	struct tun_file *tfile = container_of(sock, struct tun_file, socket);
 	struct tun_struct *tun = __tun_get(tfile);
 	int ret;
@@ -2387,7 +2391,7 @@ static long __tun_chr_ioctl(struct file *file, unsigned int cmd,
 
 #ifdef TUN_DEBUG
 	case TUNSETDEBUG:
-		tun->debug = arg;
+		tun->debug = 1;//arg;
 		break;
 #endif
 	case TUNSETOFFLOAD:
@@ -2583,7 +2587,7 @@ static int tun_chr_open(struct inode *inode, struct file * file)
 	struct net *net = current->nsproxy->net_ns;
 	struct tun_file *tfile;
 
-	DBG1(KERN_INFO, "tunX: tun_chr_open\n");
+	DBG1(KERN_INFO, "tunX: tun_chr_open:file:%p\n", file);
 
 	tfile = (struct tun_file *)sk_alloc(net, AF_UNSPEC, GFP_KERNEL,
 					    &tun_proto, 0);

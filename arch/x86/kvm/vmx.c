@@ -15,7 +15,7 @@
  * the COPYING file in the top-level directory.
  *
  */
-
+#define DEBUG
 #include "irq.h"
 #include "mmu.h"
 #include "cpuid.h"
@@ -5137,6 +5137,7 @@ static void vmx_deliver_posted_interrupt(struct kvm_vcpu *vcpu, int vector)
 {
 	struct vcpu_vmx *vmx = to_vmx(vcpu);
 	int r;
+	pr_debug("vmx_deliver_nested_posted_interrupt:%d, vector:%d\n", vcpu->vcpu_id, vector);
 
 	r = vmx_deliver_nested_posted_interrupt(vcpu, vector);
 	if (!r)

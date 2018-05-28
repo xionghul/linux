@@ -20,6 +20,7 @@
  * Copyright 2010 Red Hat, Inc. and/or its affiliates.
  */
 
+#define DEBUG
 #include <linux/kvm_host.h>
 #include <linux/slab.h>
 #include <linux/export.h>
@@ -174,6 +175,7 @@ int kvm_arch_set_irq_inatomic(struct kvm_kernel_irq_routing_entry *e,
 {
 	struct kvm_lapic_irq irq;
 	int r;
+	pr_debug("irq type:%x\n", e->type);
 
 	switch (e->type) {
 	case KVM_IRQ_ROUTING_HV_SINT:
